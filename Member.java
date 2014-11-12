@@ -11,6 +11,11 @@ public class Member extends Nonmember
       age = ag;
    }
    
+   public void printInfo()
+   {
+      System.out.print(username + " " + password + " " + email + " " + gender + " " + age);
+   }
+   
    public String username, password, email;
    int win, loss, challenges, age;
    boolean member;
