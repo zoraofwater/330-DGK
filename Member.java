@@ -5,9 +5,11 @@ public class Member extends Nonmember
       username = name;
       password = pass;
       email = mail;
+      win = loss = 0;
       member = true;
    }
    
    public String username, password, email;
+   int win, loss;
    boolean member;
 }
