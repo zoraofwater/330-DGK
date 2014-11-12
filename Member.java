@@ -10,6 +10,7 @@ public class Member extends Nonmember
    }
    
    public String username, password, email;
-   int win, loss;
+   int win, loss, challenges, age;
    boolean member;
+   char gender
 }
