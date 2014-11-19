@@ -1,6 +1,7 @@
 import java.util.*;
+import java.io.*;
 
-public class HashList{
+/*public class HashList{
    List HList = new ArrayList();
    Iterator iter = new Iterator();
    iter = HList.iterator();
@@ -19,4 +20,25 @@ public class HashList{
          }
       }
    }
-}
+}*/
+
+public class HashList{
+   int c = 0;
+   
+   public void ListAdd(String hoot) throws IOException{
+   FileReader in = new FileReader ("HList.txt");
+   FileWriter out = new FileWriter ("HList.txt");
+   char start, end;
+   int find = 0;
+   boolean found = false;
+   String hashtag = "";
+   for(start = hoot.charAt(find++); start == '#'; start = hoot.charAt(find++))
+   while (start != ' ' && start != '!' && start != '.'){      
+      hashtag = hashtag + start;
+      start = hoot.charAt(find++);
+   }
+   while (c != -1) {
+            c = in.read();}
+   out.write(hashtag);
+   }
+}   
