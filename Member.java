@@ -16,6 +16,46 @@ public class Member extends Nonmember
       System.out.print(username + " " + password + " " + email + " " + gender + " " + age);
    }
    
+   public String getUsername()
+   {
+      return username;
+   }
+   
+   public String getPassword()
+   {
+      return password;
+   }
+   
+   public String getEmail()
+   {
+      return email;
+   }
+   
+   public int getWin()
+   {
+      return win;
+   }
+   
+   public int getLoss()
+   {
+      return loss;
+   }
+   
+   public int getChallenges()
+   {
+      return challenges;
+   }
+   
+   public int getAge()
+   {
+      return age;
+   }
+   
+   public char getGender()
+   {
+      return gender;
+   }
+   
    public String username, password, email;
    int win, loss, challenges, age;
    boolean member;
