@@ -25,13 +25,16 @@ public class ListOfHoots
 		}
 		bufferWritter.write(" STARTTHEHOOT " + hootText + " ENDTHEHOOT ( ");
 		//enter list of tagged users
-		for(){
-			
+		int taggedUsersSize = thing.getListOfUsersTagged().size();
+		for(int i = 0; i < taggedUsersSize; i++){
+			bufferWritter.write(thing.getListOfUsersTagged()[i] + " ");
 		}
 		bufferWritter.write(" ) [ ");
+		
+		int hashTagsSize = thing.getListOfHashtags().size();
 		//enter list of hashtags
-		for(){
-			
+		for(int i = 0; i < hashTagsSize; i++){
+			bufferWritter.write(thing.getListOfHashtags()[i] + " ");
 		}
 		bufferWritter.write(" ] }\n");
 		HootList.push(thing);
