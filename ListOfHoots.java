@@ -16,7 +16,7 @@ public class ListOfHoots
 	public void insert(Hoot thing){
 		FileWriter fileWritter = new FileWriter("hootFile.txt",true);
 		BufferedWriter bufferWritter = new BufferedWriter(fileWritter);
-		bufferWritter.write("\n{ " + thing.getUsername() + " ");
+		bufferWritter.write("{ " + thing.getUsername() + " ");
 		if(thing.getHootStatus() == true){
 			bufferWritter.write("1");
 		}
@@ -24,9 +24,16 @@ public class ListOfHoots
 			bufferWritter.write("0");
 		}
 		bufferWritter.write(" STARTTHEHOOT " + hootText + " ENDTHEHOOT ( ");
+		//enter list of tagged users
 		for(){
 			
 		}
+		bufferWritter.write(" ) [ ");
+		//enter list of hashtags
+		for(){
+			
+		}
+		bufferWritter.write(" ] }\n");
 		HootList.push(thing);
 	}
 
