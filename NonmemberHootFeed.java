@@ -47,7 +47,7 @@ class NonmemberHootFeed {
 					
 				}
 				else if(i >= 4 && i <= endOfHoot){
-					if (parts[i].compareTo("\"") == 0){
+					if (parts[i].compareTo("ENDTHEHOOT") == 0){
 						endOfHoot = i;
 					}
 					else {
