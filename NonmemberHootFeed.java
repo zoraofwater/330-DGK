@@ -36,10 +36,10 @@ class NonmemberHootFeed {
 // parts[4] will always be the first word in the hoot
 			uName = parts[1];
 			if (parts[2].compareTo("0") == 0){
-				priOrPub = 0;
+				priOrPub = false;
 			}
 			else {
-				priOrPub = 1;
+				priOrPub = true;
 			}
 			
 			for (string part : parts){
@@ -77,7 +77,7 @@ class NonmemberHootFeed {
 				i++;
 			}
 			
-			if (priOrPub == 0){
+			if (priOrPub == false){
 				System.out.println(uName ":");
 				System.out.println(hootText + "\n\n");
 				
