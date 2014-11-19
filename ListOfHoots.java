@@ -1,22 +1,37 @@
 import java.util.*;
+import java.io.*;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.BufferedWriter;
 
 public class ListOfHoots
 {
-	protected Stack<Hoot> HootStack;
+	protected LinkedList<Hoot> HootList;
 	protected int StackSize;
 	protected boolean HootStatus;
-	protected String Username;
-	public ListOfHoots(string uName){
-		Username = uName;
-		HootStack = new Stack();
+	public ListOfHoots(){
+		HootList = new Stack();
 	}
-
+//Adds hoot to end of list and file
 	public void insert(Hoot thing){
-		HootStack.push(thing);
+		FileWriter fileWritter = new FileWriter("hootFile.txt",true);
+		BufferedWriter bufferWritter = new BufferedWriter(fileWritter);
+		bufferWritter.write("\n{ " + thing.getUsername() + " ");
+		if(thing.getHootStatus() == true){
+			bufferWritter.write("1");
+		}
+		else{
+			bufferWritter.write("0");
+		}
+		bufferWritter.write(" STARTTHEHOOT " + hootText + " ENDTHEHOOT ( ");
+		for(){
+			
+		}
+		HootList.push(thing);
 	}
 
 	public Hoot takeTop(){
-		return HootStackPop;
+		return HootList.pop();
 	}
 	
 }
