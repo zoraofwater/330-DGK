@@ -6,42 +6,42 @@ import java.io.BufferedWriter;
 
 public class ListOfHoots
 {
-	protected LinkedList<Hoot> HootList;
 	protected int StackSize;
 	protected boolean HootStatus;
 	public ListOfHoots(){
-		HootList = new Stack();
+		
 	}
 //Adds hoot to end of list and file
 	public void insert(Hoot thing){
-		FileWriter fileWritter = new FileWriter("hootFile.txt",true);
-		BufferedWriter bufferWritter = new BufferedWriter(fileWritter);
-		bufferWritter.write("{ " + thing.getUsername() + " ");
-		if(thing.getHootStatus() == true){
-			bufferWritter.write("1");
+		FileWriter out = new FileWriter("hootFile.txt",true);
+		try { 
+			out.write("{ " + thing.getUsername() + " ");
+			if(thing.getHootStatus() == true){
+				out.write("1");
+			}
+			else {
+				out.write("0");
+			}
+			out.write(" STARTTHEHOOT " + hootText + " ENDTHEHOOT ( ");
+			int taggedUsersSize = thing.getListOfUsersTagged().size();
+			for(int i = 0; i < taggedUsersSize; i++){
+				out.write(thing.getListOfUsersTagged()[i] + " ");
+			}
+			out.write(" ) [ ");
+			int hashTagsSize = thing.getListOfHashtags().size();
+			for(int i = 0; i < hashTagsSize; i++){
+				out.write(thing.getListOfHashtags()[i] + " ");
+			}
+			out.write(" ] }\n");
+		}finally {
+			if (out != null){
+				out.close();
+			}
 		}
-		else{
-			bufferWritter.write("0");
-		}
-		bufferWritter.write(" STARTTHEHOOT " + hootText + " ENDTHEHOOT ( ");
-		//enter list of tagged users
-		int taggedUsersSize = thing.getListOfUsersTagged().size();
-		for(int i = 0; i < taggedUsersSize; i++){
-			bufferWritter.write(thing.getListOfUsersTagged()[i] + " ");
-		}
-		bufferWritter.write(" ) [ ");
-		
-		int hashTagsSize = thing.getListOfHashtags().size();
-		//enter list of hashtags
-		for(int i = 0; i < hashTagsSize; i++){
-			bufferWritter.write(thing.getListOfHashtags()[i] + " ");
-		}
-		bufferWritter.write(" ] }\n");
-		HootList.push(thing);
 	}
-
+	
 	public Hoot takeTop(){
-		return HootList.pop();
+		
 	}
 	
 }
