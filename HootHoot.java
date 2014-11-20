@@ -10,72 +10,47 @@ public class HootHoot
    public static void main(String[] args)
    {
       String name, pass, email, line;
-      char ch;
+      char ch, gender;
       int age, count = 0;
       Member user;
       ListofMembers lom = new ListofMembers();
-      boolean loop = true;
+      boolean program = true, login = false;
       
-      /*while(loop == true)
+      while(program == true)
       {
-         System.out.println("Type in a username: ");
-         name = inLine.nextLine();
-         System.out.println("Type in a password: ");
-         pass = inLine.nextLine();
-         System.out.println("Type in your email: ");
-         email = inLine.nextLine();
-         System.out.println("Type in your gender (M/F): ");
+         System.out.println("Please select your option from the following menu:");
+         System.out.println("R: Register an account");
+         System.out.println("L: Log in");
+         System.out.println("V: View HootFeed");
+         System.out.println("M: Search Member");
+         System.out.println("");
+         
          ch = inChar.next().charAt(0);
-         System.out.println("Type in your age: ");
-         age = inInt.nextInt();
-      
-         user = new Member(name,pass, email, ch, age);
+         System.out.println("");
+         
+         switch(ch)
+         {
+            case 'r':
+            case 'R':
+               System.out.print("Enter username: ");
+               name = input.next();
+               System.out.print("Enter password: ");
+               pass = input.next();
+               System.out.print("Enter email: ");
+               email = input.next();
+               System.out.print("Enter gender(M/F): ");
+               gender = input.nextLine().charAt(0);
+               System.out.print("Enter age (Must be 10+ to make an account): ");
+               age = input.nextInt();
+               user = new Member(name,pass,email,gender,age);
+               break;
+            default: 
+               System.out.println("You've pressed a key not on our list. Please try again.");  
+               break;
+         }
+         System.out.println("");
+      }
 
-         
-         try
-         {
-            lom.add(user);
-         }
-         catch(IOException a)
-         {
-            System.out.println("AJSLDKFAJSDF");
-         }
-         
-         System.out.println(count);
-         
-         if (count == 2)
-         {
-            loop = false;
-         }
-         else
-         {
-            count++;
-         }
-      }*/
       
-      System.out.println("Type in your username to login: ");
-      name = inLine.nextLine();
-      System.out.println("Type in your password: ");
-      pass = inLine.nextLine();
-      boolean login = false;
-      
-      try
-      {
-         login = lom.searchLogin(name,pass);
-      }
-      catch(IOException a)
-      {
-         System.out.println("DJFAKLWJEKFKDJMF");
-      }
-      
-      
-      if(login == false)
-      {
-         System.out.println("Username/Password invalid.");
-      }
-      else if (login == true)
-      {
-         System.out.println("Log in Successful.");
-      }
    }
 }

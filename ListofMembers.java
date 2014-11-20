@@ -63,6 +63,32 @@ public class ListofMembers
       return user;
    }
    
+   public boolean searchUser(String name) throws IOException
+   {
+      br = new BufferedReader(new FileReader("output.txt"));
+      boolean user = true;
+      String line = br.readLine(), line2 = "";;
+           
+      while(line != null)
+      {  
+         line2 = getWord(line);
+         
+         if(name.equals(line2))
+         {
+            user = true;
+            line = null;
+         }
+         else
+         {
+            user = false;
+            line = br.readLine();
+         }
+         line2 = "";
+         count = 0;
+      }
+      return user;
+   }
+   
    public String getWord(String temp)
    {
       String temp2 = "";
