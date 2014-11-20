@@ -22,7 +22,7 @@ public class ListOfHoots
 			else {
 				out.write("0");
 			}
-			out.write(" STARTTHEHOOT " + hootText + " ENDTHEHOOT ( ");
+			out.write(" STARTTHEHOOT " + thing.hot + " ENDTHEHOOT ( ");
 			int taggedUsersSize = thing.getListOfUsersTagged().size();
 			for(int i = 0; i < taggedUsersSize; i++){
 				out.write(thing.getListOfUsersTagged()[i] + " ");
