@@ -3,6 +3,7 @@ import java.io.BufferedReader.*;
 
 class NonmemberHootFeed {
 	public LinkedList HootList;
+	List<Hoot> allTheHoots = new List();
 	public NonmemberHootFeed(){
 		BufferedReader reader = new BufferedReader(new FileReader("hootFile.txt"));
 		
@@ -12,9 +13,11 @@ class NonmemberHootFeed {
 		String[] tUsers = new String[10];
 		String[] hTags = new String[10];
 		
-		ListOfHoots
+		int listIndex = 0;
+		
 		
 		while (reader.nextLine() != null){
+			
 			String line = reader.readLine();
 			String parts[] = reader.split(" ");
 			
@@ -82,6 +85,7 @@ class NonmemberHootFeed {
 				System.out.println(hootText + "\n\n");
 				
 			}
+			listIndex++;
 		}
 	}
 }
