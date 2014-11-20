@@ -9,14 +9,14 @@ public class HootHoot
    public static Scanner inLine = new Scanner(System.in), inChar = new Scanner(System.in), inInt = new Scanner(System.in);
    public static void main(String[] args)
    {
-      String name, pass, email;
+      String name, pass, email, line;
       char ch;
       int age, count = 0;
       Member user;
       ListofMembers lom = new ListofMembers();
       boolean loop = true;
       
-      while(loop == true)
+      /*while(loop == true)
       {
          System.out.println("Type in a username: ");
          name = inLine.nextLine();
@@ -30,8 +30,7 @@ public class HootHoot
          age = inInt.nextInt();
       
          user = new Member(name,pass, email, ch, age);
-         user.printInfo();
-         System.out.println();
+
          
          try
          {
@@ -52,6 +51,31 @@ public class HootHoot
          {
             count++;
          }
+      }*/
+      
+      System.out.println("Type in your username to login: ");
+      name = inLine.nextLine();
+      System.out.println("Type in your password: ");
+      pass = inLine.nextLine();
+      boolean login = false;
+      
+      try
+      {
+         login = lom.searchLogin(name,pass);
+      }
+      catch(IOException a)
+      {
+         System.out.println("DJFAKLWJEKFKDJMF");
+      }
+      
+      
+      if(login == false)
+      {
+         System.out.println("Username/Password invalid.");
+      }
+      else if (login == true)
+      {
+         System.out.println("Log in Successful.");
       }
    }
 }
