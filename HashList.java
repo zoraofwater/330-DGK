@@ -20,25 +20,19 @@ import java.io.*;
          }
       }
    }
-}*/
+} Do not reinsert, possibly may need to delete*/
 
 public class HashList{
-   int c = 0;
    
-   public void ListAdd(String hoot) throws IOException{
+   public void ListAdd(String hoot, int count) throws IOException{
    FileReader in = new FileReader ("HList.txt");
    FileWriter out = new FileWriter ("HList.txt");
-   char start, end;
-   int find = 0;
-   boolean found = false;
+   char start = hoot.charAt(count);
    String hashtag = "";
-   for(start = hoot.charAt(find++); start == '#'; start = hoot.charAt(find++))
    while (start != ' ' && start != '!' && start != '.'){      
       hashtag = hashtag + start;
-      start = hoot.charAt(find++);
-   }
-   while (c != -1) {
-            c = in.read();}
+      start = hoot.charAt(count++);
+      }
    out.write(hashtag);
    }
 }   
