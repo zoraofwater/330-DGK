@@ -1,3 +1,2 @@
 { USERNAME PUB/PRI STARTTHEHOOT HOOT HOOT HOOT HOOT HOOT ENDTHEHOOT ( TAGGEDUSER1 TAGGEDUSER2 TAGGEDUSER3 ... ) [ HASHTAG1 HASHTAG2 HASHTAG 3 ... ] }
-
-{ J03y PUB STARTTHEHOOT J03y hooted: My Rattata evolved! Now my Raticate is in the top percentage of Raticates! ENDTHEHOOT [#Top10]}
+{ J03y 0 STARTTHEHOOT My Rattata evolved! Now my Raticate is in the top percentage of Raticates! #Top10 ENDTHEHOOT [#Top10]}
