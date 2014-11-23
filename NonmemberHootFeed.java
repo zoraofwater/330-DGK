@@ -1,10 +1,14 @@
 import java.io.*;
+import java.util.*;
 import java.io.BufferedReader.*;
 
-class NonmemberHootFeed {
-	public LinkedList HootList;
-	List<Hoot> allTheHoots = new List();
-	public NonmemberHootFeed(){
+public class NonmemberHootFeed
+{
+   //TURN INTO A FILE, BISH!
+	LinkedList HootList = new LinkedList();
+	List<Hoot> allTheHoots = new LinkedList();
+	public NonmemberHootFeed()throws FileNotFoundException, IOException
+   {
 		BufferedReader reader = new BufferedReader(new FileReader("hootFile.txt"));
 		
 		
@@ -15,14 +19,14 @@ class NonmemberHootFeed {
 		
 		int listIndex = 0;
 		
-		
-		while (reader.nextLine() != null){
+      String line = reader.readLine();
+      
+		while (line != null){
 			
-			String line = reader.readLine();
-			String parts[] = reader.split(" ");
+			String parts[] = line.split(" ");
 			
 			String hootText = "";
-			String uName = "";
+			uName = "";
 			
 			
 			int i = 0;
@@ -45,35 +49,35 @@ class NonmemberHootFeed {
 				priOrPub = true;
 			}
 			
-			for (string part : parts){
+			for (String part : parts){
 				if(i >= 0 && i <= 3){
 					
 				}
-				else if(i >= 4 && i <= endOfHoot){
+				else if(i >= 4 && i <= endHoot){
 					if (parts[i].compareTo("ENDTHEHOOT") == 0){
-						endOfHoot = i;
+						endHoot = i;
 					}
 					else {
 						hootText = hootText + " " + parts[i];
 					}
 				}
-				else if(i > endOfHoot+1 && i < endtUsers){
+				else if(i > endHoot+1 && i < endtUsers){
 					if (parts[i].compareTo(")") == 0){
-						endtUser = i;
+						endtUsers = i;
 					}
 					else {
 						int size = parts[i].length();
-						tUser[tUserIterator] = parts[i].substring(1, size-1);
+						tUsers[tUserIterator] = parts[i].substring(1, size-1);
 						tUserIterator++;
 					}
 				}
-				else if (i > endtUser+1 && i < endhTags){
+				else if (i > endtUsers+1 && i < endhTags){
 					if (parts[i].compareTo("]") == 0){
-						endhTag = i;
+						endhTags = i;
 					}
 					else {
 						int size = parts[i].length();
-						hTag[hTagIterator] = parts[i].substring(1, size-1);
+						hTags[hTagIterator] = parts[i].substring(0, size-1);
 						hTagIterator++;
 					}
 				}
@@ -81,11 +85,12 @@ class NonmemberHootFeed {
 			}
 			
 			if (priOrPub == false){
-				System.out.println(uName ":");
+				System.out.println(uName + ":");
 				System.out.println(hootText + "\n\n");
 				
 			}
 			listIndex++;
+         line = reader.readLine();
 		}
 	}
 }
