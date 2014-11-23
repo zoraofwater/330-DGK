@@ -22,14 +22,24 @@ public class ListOfHoots
 				out.write("0");
 			}
 			out.write(" STARTTHEHOOT " + thing.hot + " ENDTHEHOOT ( ");
-			int taggedUsersSize = thing.getListOfUsersTagged().size();
-			for(int i = 0; i < taggedUsersSize; i++){
-				out.write(thing.getListOfUsersTagged()[i] + " ");
+			//Make an array of strings from the hoot of individual words in hoot
+			String parts[] = thing.split(" ");
+			int partsSize = parts.size();
+			//find all tagged users
+			for(int i = 0; i < partsSize; i++){
+				char[] word = parts[i].toCharArray)();
+				if(word[0] == '@'){
+					out.write(parts[i].substring(1) + " ");	
+				}
+				
 			}
 			out.write(" ) [ ");
-			int hashTagsSize = thing.getListOfHashtags().size();
+			//find all tagged users
 			for(int i = 0; i < hashTagsSize; i++){
-				out.write(thing.getListOfHashtags()[i] + " ");
+				char[] word = parts[i].toCharArray)();
+				if(word[0] == '#'){
+					out.write(parts[i].substring(1) + " ");	
+				}
 			}
 			out.write(" ] }\n");
 		}finally {
@@ -39,8 +49,6 @@ public class ListOfHoots
 		}
 	}
 	
-	public Hoot takeTop(){
-		
-	}
+	
 	
 }
