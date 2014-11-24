@@ -1,4 +1,4 @@
-public class Member extends Nonmember
+public class Member
 {
    Member(String name, String pass, String mail, char gen, int ag)
    {
