@@ -8,6 +8,15 @@ public class Hoot{
       hot = hoot;
       name = username;
       pubPri = pubOrPri;}
+      
+   public String getHoot(){
+      return hot;}
+      
+   public String getUsername(){
+      return name;}
+      
+   public boolean getHootStatus(){
+      return pubPri;}
 
    public void HAdd(String hot){
       HashList HL = new HashList(); //should be in main
