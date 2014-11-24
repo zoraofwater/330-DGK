@@ -54,8 +54,8 @@ public class ListOfHoots
 	public void findInstanceOfHashtag(String htag)throws FileNotFoundException, IOException{
 		BufferedReader reader = new BufferedReader(new FileReader("hootFile.txt"));
 		String line = reader.readLine();
-		String[1000] hTagHoots;
-		String[1000] hTagUsers;
+		String[] hTagHoots = new String[1000];
+		String[] hTagUsers = new String[1000];
 		int hootNum = 0;
 		while (line != null){
 			String parts[] = line.split(" ");
