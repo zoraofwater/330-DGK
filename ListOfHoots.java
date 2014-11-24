@@ -25,13 +25,13 @@ public class ListOfHoots
 			}
 			out.write(" STARTTHEHOOT " + thing.hot + " ENDTHEHOOT ( ");
 			//Make an array of strings from the hoot of individual words in hoot
-			String parts[] = thing.split(" ");
-			int partsSize = parts.size();
+			String parts[] = thing.getHoot().split(" ");
+			//int partsSize = parts.size();
 			//find all tagged users
-			for(int i = 0; i < partsSize; i++){
-				char[] word = parts[i].toCharArray();
+			for(String str : parts){
+				char[] word = str.toCharArray();
 				if(word[0] == '@'){
-					out.write(parts[i].substring(1) + " ");	
+					out.write(str.substring(1) + " ");	
 				}
 				
 			}
@@ -136,8 +136,8 @@ public class ListOfHoots
 			}
 			if(keepGoing == true){
 				for(int i = lastPageSize; lastPageSize > 0; lastPageSize--){
-					System.out.print(hTagUsers[lastPageSize-1]) + ": ");
-					System.out.print(hTagHoots[lastPageSize-1]) + "\n\n";
+					System.out.print(hTagUsers[lastPageSize-1] + ": ");
+					System.out.print(hTagHoots[lastPageSize-1] + "\n\n");
 				}
 			}
 			
