@@ -2,8 +2,12 @@ import java.io.*;
 
 public class Hoot{
    public String hot;
-   Hoot(String hoot){
-      hot = hoot;}
+   boolean pubPri;
+   public String name;
+   Hoot(String username, boolean pubOrPri, String hoot){
+      hot = hoot;
+      name = username;
+      pubPri = pubOrPri;}
 
    public void HAdd(String hot){
       HashList HL = new HashList(); //should be in main

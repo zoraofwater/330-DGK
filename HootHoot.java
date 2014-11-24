@@ -24,6 +24,7 @@ public class HootHoot
          System.out.println("L: Log in");
          System.out.println("V: View HootFeed");
          System.out.println("M: Search Member");
+         System.out.println("Q: Quit");
          System.out.println("");
          
          ch = inChar.next().charAt(0);
