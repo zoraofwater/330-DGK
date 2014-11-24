@@ -29,7 +29,7 @@ public class ListOfHoots
 			int partsSize = parts.size();
 			//find all tagged users
 			for(int i = 0; i < partsSize; i++){
-				char[] word = parts[i].toCharArray)();
+				char[] word = parts[i].toCharArray();
 				if(word[0] == '@'){
 					out.write(parts[i].substring(1) + " ");	
 				}
@@ -38,7 +38,7 @@ public class ListOfHoots
 			out.write(" ) [ ");
 			//find all tagged users
 			for(int i = 0; i < hashTagsSize; i++){
-				char[] word = parts[i].toCharArray)();
+				char[] word = parts[i].toCharArray();
 				if(word[0] == '#'){
 					out.write(parts[i].substring(1) + " ");	
 				}
@@ -54,7 +54,7 @@ public class ListOfHoots
 	public void findInstanceOfHashtag(String htag)throws FileNotFoundException, IOException{
 		BufferedReader reader = new BufferedReader(new FileReader("hootFile.txt"));
 		String line = reader.readLine();
-		String[1000][2] hTagHoots = null;
+		String[1000][2] hTagHoots;
 		int hootNum = 0;
 		while (line != null){
 			String parts[] = line.split(" ");
