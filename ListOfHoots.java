@@ -13,7 +13,7 @@ public class ListOfHoots
 		
 	}
 //Adds hoot to end of list and file
-	public void insert(Hoot thing){
+	public void insert(Hoot thing) throws IOException{
 		FileWriter out = new FileWriter("hootFile.txt",true);
 		try { 
 			out.write("{ " + thing.getUsername() + " ");
@@ -37,10 +37,10 @@ public class ListOfHoots
 			}
 			out.write(" ) [ ");
 			//find all tagged users
-			for(int i = 0; i < hashTagsSize; i++){
-				char[] word = parts[i].toCharArray();
+			for(String str : parts){
+				char[] word = str.toCharArray();
 				if(word[0] == '#'){
-					out.write(parts[i].substring(1) + " ");	
+					out.write(str.substring(1) + " ");	
 				}
 			}
 			out.write(" ] }\n");
@@ -76,14 +76,14 @@ public class ListOfHoots
 				}
 				//parts[endHoot+1] will always be "("
 				int endUserTags = 1000;
-				for(int i = endHoot+2; i < endUserTag; i++){
+				for(int i = endHoot+2; i < endUserTags; i++){
 					if(parts[i].compareTo(")") == 0){
 						endUserTags = i;
 					}
 				}
 				//parts[endUserTag+1] will always be "["
 				int endHashtag = 1000;
-				for(int i = endUserTag+2; i < endHashtag; i++){
+				for(int i = endUserTags+2; i < endHashtag; i++){
 					if(parts[i].compareTo(")") == 0){
 						endHashtag = i;
 					}
@@ -112,8 +112,8 @@ public class ListOfHoots
 				int pn = pages - pageNum;
 				System.out.println("\nPage " + pn + " of " + pages + ".");
 				for(int entryNum = 0; entryNum > 5; entryNum++){
-					System.out.print(hTagHoots[hootNum - ( ( pageNum * 5 ) + 1 + entryNum)][0] + ": ");
-					System.out.print(hTagHoots[hootNum - ( ( pageNum * 5 ) + 1 + entryNum)][1] + "\n\n");
+					System.out.print(hTagUsers[hootNum - ( ( pageNum * 5 ) + 1 + entryNum)] + ": ");
+					System.out.print(hTagHoots[hootNum - ( ( pageNum * 5 ) + 1 + entryNum)] + "\n\n");
 				}
 				Scanner in = new Scanner(System.in);
 				System.out.println("\nLoad another page?(y/n)");
