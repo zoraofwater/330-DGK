@@ -14,8 +14,9 @@ public class Menu
    Member user;
    ListofMembers lom = new ListofMembers();
    NonmemberHootFeed nonHoot;
-   public void seeMenu(boolean login2)
+   public void seeMenu(boolean login2, String memName)
    {
+      name = memName;
       System.out.println("Please select your option from the following menu: ");
       if(login2 == true)
       {

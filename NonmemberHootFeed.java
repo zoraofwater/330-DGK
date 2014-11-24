@@ -16,8 +16,8 @@ public class NonmemberHootFeed
 		
       String line = reader.readLine();
       
-		while (line != null){
-			
+		while (line != null)
+      {
 			String parts[] = line.split(" ");
 			
 			String hootText = "";
@@ -37,14 +37,17 @@ public class NonmemberHootFeed
 // parts[3] will always be an open quote
 // parts[4] will always be the first word in the hoot
 			uName = parts[1];
-			if (parts[2].compareTo("0") == 0){
+			if (parts[2].compareTo("0") == 0)
+         {
 				priOrPub = false;
 			}
-			else {
+			else 
+         {
 				priOrPub = true;
 			}
 			
-			for (String part : parts){
+			for (String part : parts)
+         {
 				if(i >= 0 && i <= 3){
 					
 				}
@@ -85,7 +88,6 @@ public class NonmemberHootFeed
 				
 			}
          line = reader.readLine();
-         //System.out.println(line);
 		}
 	}
 }
