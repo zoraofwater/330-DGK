@@ -10,27 +10,22 @@ public class Menu
    String name, pass, email, line;
    char gender;
    int age;
-   boolean username, login, program = true;
+   boolean username, program = true;
    Member user;
    ListofMembers lom = new ListofMembers();
    NonmemberHootFeed nonHoot;
-   public void seeMenu()
+   public void seeMenu(boolean login2)
    {
-      System.out.println("Please select your option from the following menu:");
-      if(login == true)
+      System.out.println("Please select your option from the following menu: ");
+      if(login2 == true)
       {
-         //post
          System.out.println("P: Post a Hoot");
-         //subscribe
          System.out.println("S: Subscribe to a member");
-         //subscribe feed
          System.out.println("F: View Subscription Hoot Feed");
-         //update win/loss records
          System.out.println("U: Update records");
-         //check for tags
          System.out.println("C: Check for hoots tagged");
       }
-      else if (login == false)
+      else if (login2 == false)
       {
          System.out.println("R: Register an account");
          System.out.println("L: Log in");
@@ -60,23 +55,10 @@ public class Menu
                System.out.print("Enter age (Must be 10+ to make an account): ");
                age = inInt.nextInt();
                user = new Member(name,pass,email,gender,age);
+               lom.add(user);
                break;
             case 'L':
             case 'l':
-               System.out.print("Enter username: ");
-               name = inLine.next();
-               System.out.print("Enter password: ");
-               pass = inLine.next();
-              // try
-               login = lom.searchLogin(name,pass);
-               if(login == true)
-               {
-                  System.out.println("You have Logged in.");
-               }
-               else if (login == false)
-               {
-                  System.out.println("Username/Password invalid.");
-               }
                break;
             case 'V':
             case 'v':
@@ -99,6 +81,27 @@ public class Menu
             case 'Q':
             case 'q':
                program = false;   
+               break;
+            case 'p':
+            case 'P':
+               //add hoot
+               break;
+            case 's':
+            case 'S':
+               //subscribe
+               break;
+            case 'f':
+            case 'F':
+               //subscribe hoot feed
+               nonHoot = new NonmemberHootFeed();
+               break;
+            case 'u':
+            case 'U':
+               // update user records
+               break;
+            case 'c':
+            case 'C':
+               //check tags
                break;
             default: 
                System.out.println("You've pressed a key not on our list. Please try again.");  

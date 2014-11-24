@@ -4,14 +4,10 @@ import java.io.BufferedReader.*;
 
 public class NonmemberHootFeed
 {
-   //TURN INTO A FILE, BISH!
-	LinkedList HootList = new LinkedList();
-	List<Hoot> allTheHoots = new LinkedList();
 	public NonmemberHootFeed()throws FileNotFoundException, IOException
    {
 		BufferedReader reader = new BufferedReader(new FileReader("hootFile.txt"));
-		
-		
+
 		boolean priOrPub;
 		String uName;
 		String[] tUsers = new String[10];

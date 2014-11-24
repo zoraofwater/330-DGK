@@ -4,11 +4,13 @@ public class ListofMembers
 {  
    public FileWriter out;
    public BufferedReader br;
+   
+   Subscribe list = new Subscribe();
 
    public void add(Member object) throws IOException
    {
       out = new FileWriter("output.txt",true);
-
+      
       try { 
          out.write(object.getUsername() + " ");
          out.write(object.getPassword() + " ");
@@ -24,6 +26,8 @@ public class ListofMembers
             out.close();
          }
       }
+      list.addMember(getSize());
+      //Subscribe,add(object.getUsername(), getSize());
    }
    
    public boolean searchLogin(String name, String pass) throws IOException
@@ -100,5 +104,18 @@ public class ListofMembers
       return temp2;
    }
    
-   private int count = 0;
+   public int getSize() throws IOException, FileNotFoundException
+   {
+      br = new BufferedReader(new FileReader("output.txt"));
+      String line = br.readLine();
+           
+      while(line != null)
+      {  
+         size++;
+      }
+      return size;
+
+   }
+   
+   private int count = 0, size = 0;
 }
