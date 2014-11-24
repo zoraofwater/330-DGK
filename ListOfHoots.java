@@ -54,7 +54,8 @@ public class ListOfHoots
 	public void findInstanceOfHashtag(String htag)throws FileNotFoundException, IOException{
 		BufferedReader reader = new BufferedReader(new FileReader("hootFile.txt"));
 		String line = reader.readLine();
-		String[1000][2] hTagHoots;
+		String[1000] hTagHoots;
+		String[1000] hTagUsers;
 		int hootNum = 0;
 		while (line != null){
 			String parts[] = line.split(" ");
@@ -94,14 +95,14 @@ public class ListOfHoots
 				}
 			}
 			if(showHoot == true){
-				hTagHoots[hootNum][0] = uName;
-				hTagHoots[hootNum][1] = hootText;
+				hTagUsers[hootNum] = uName;
+				hTagHoots[hootNum] = hootText;
 				hootNum++;
 			}
 		}
 		
 		if(hTagHoots==null){
-			System.out.println("Sorry, no Hoots match your search.  I guess that makes you sooo unique.")
+			System.out.println("Sorry, no Hoots match your search.  I guess that makes you sooo unique.");
 		}
 		else{
 			int pages = hootNum / 5;
@@ -135,8 +136,8 @@ public class ListOfHoots
 			}
 			if(keepGoing == true){
 				for(int i = lastPageSize; lastPageSize > 0; lastPageSize--){
-					System.out.print(hTagHoots[lastPageSize-1][0]) + ": ");
-					System.out.print(hTagHoots[lastPageSize-1][1]) + "\n\n";
+					System.out.print(hTagUsers[lastPageSize-1]) + ": ");
+					System.out.print(hTagHoots[lastPageSize-1]) + "\n\n";
 				}
 			}
 			
