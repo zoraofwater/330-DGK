@@ -13,7 +13,6 @@ public class NonmemberHootFeed
 		String[] tUsers = new String[10];
 		String[] hTags = new String[10];
 		
-		int listIndex = 0;
 		
       String line = reader.readLine();
       
@@ -85,8 +84,8 @@ public class NonmemberHootFeed
 				System.out.println(hootText + "\n\n");
 				
 			}
-			listIndex++;
          line = reader.readLine();
+         //System.out.println(line);
 		}
 	}
 }
