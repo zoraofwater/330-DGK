@@ -19,7 +19,7 @@ public class ListofMembers
          out.write(object.getLoss() + " ");
          System.out.println("Loss" + object.getLoss()+ "*");
          out.write(object.getChallenges());
-         out.write('\n');
+         out.write("\n");
          System.out.println("Chal" + object.getChallenges() + "*");
       }finally {
          if (out != null)
