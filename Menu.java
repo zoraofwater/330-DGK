@@ -15,9 +15,11 @@ public class Menu
    ListofMembers lom = new ListofMembers();
    ListOfHoots loh = new ListOfHoots();
    Hoot hot;
+   Subscribe sub;
    NonmemberHootFeed nonHoot;
-   public void seeMenu(boolean login2, String memName)
+   public void seeMenu(boolean login2, String memName) throws IOException
    {
+      sub = new Subscribe(lom.getSize());
       name = memName;
       System.out.println("Please select your option from the following menu: ");
       if(login2 == true)
@@ -60,6 +62,7 @@ public class Menu
                age = inInt.nextInt();
                user = new Member(name,pass,email,gender,age);
                lom.add(user);
+               sub.update(lom.getSize());
                break;
             case 'H':
             case 'h':
