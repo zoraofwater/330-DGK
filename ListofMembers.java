@@ -4,9 +4,6 @@ public class ListofMembers
 {  
    public FileWriter out;
    public BufferedReader br;
-   
-   Subscribe list = new Subscribe();
-
    public void add(Member object) throws IOException
    {
       out = new FileWriter("output.txt",true);
@@ -26,7 +23,6 @@ public class ListofMembers
             out.close();
          }
       }
-      list.addMember(getSize());
       //Subscribe,add(object.getUsername(), getSize());
    }
    
@@ -106,12 +102,14 @@ public class ListofMembers
    
    public int getSize() throws IOException, FileNotFoundException
    {
+      int size = 0;
       br = new BufferedReader(new FileReader("output.txt"));
       String line = br.readLine();
            
       while(line != null)
       {  
          size++;
+         line = br.readLine();
       }
       return size;
 
