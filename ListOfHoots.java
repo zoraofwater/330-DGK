@@ -108,10 +108,10 @@ public class ListOfHoots
 			int pages = hootNum / 5;
 			int lastPageSize = hootNum % 5;
 			boolean keepGoing = true;
-			for(int pageNum = 0; pageNum < 0; pageNum++){
+			for(int pageNum = 0; pageNum < pages; pageNum++){
 				int pn = pages - pageNum;
 				System.out.println("\nPage " + pn + " of " + pages + ".");
-				for(int entryNum = 0; entryNum > 5; entryNum++){
+				for(int entryNum = 0; entryNum < 5; entryNum++){
 					System.out.print(hTagUsers[hootNum - ( ( pageNum * 5 ) + 1 + entryNum)] + ": ");
 					System.out.print(hTagHoots[hootNum - ( ( pageNum * 5 ) + 1 + entryNum)] + "\n\n");
 				}
