@@ -86,12 +86,13 @@ public class NonmemberHootFeed
 		}
 	}
 	
-	public void amITagged(string taggedName){
+	public void amITagged(String taggedName) throws IOException{
 		int tagCount = 0;
 		BufferedReader reader = new BufferedReader(new FileReader("hootFile.txt"));
 		String[] tagHoots = new String[1000];
 		String[] tagUsers = new String[1000];
 		String[] tUsers = new String[10];
+      String line = reader.readLine();
 		while (line != null) {
 			String parts[] = line.split(" ");
 			
@@ -124,14 +125,16 @@ public class NonmemberHootFeed
 					}
 					else {
 						int size = parts[i].length();
-						tUsers[tUserIterator] = parts[i].substring(1, size-1);
+						tUsers[tUserIterator] = parts[i];
 						tUserIterator++;
 					}
 				}
-				i++
+				i++;
 			}
 			
 			for(int j = 0; j < tUserIterator; j++){
+         System.out.println(taggedName);
+         System.out.println(tUsers[j]);
 				if(taggedName.compareTo(tUsers[j]) == 0){
 					tagHoots[tagCount] = hootText;
 					tagUsers[tagCount] = uName;
@@ -142,7 +145,7 @@ public class NonmemberHootFeed
 					
 				}
 			}
-			
+		line = reader.readLine();	
 		}
 		if(tagCount==0){
 			System.out.println("I am so sorry, it looks like nobody likes you.  So sad.");
@@ -185,6 +188,6 @@ public class NonmemberHootFeed
 			}
 		}
 		
-		
+	
 	}
 }

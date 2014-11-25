@@ -7,7 +7,7 @@ public class Menu
 {
    public static Scanner inLine = new Scanner(System.in), inChar = new Scanner(System.in), inInt = new Scanner(System.in);
    
-   String name, pass, email, line, hoot;
+   String name, pass, email, line, hoot, hTag;
    char gender, val;
    int age;
    boolean username, program = true, pubPri;
@@ -36,6 +36,7 @@ public class Menu
          
       System.out.println("V: View HootFeed");
       System.out.println("M: Search Member");
+      System.out.println("H: Search Hashtag");
       System.out.println("Q: Quit");
       System.out.println("");
    }
@@ -59,6 +60,11 @@ public class Menu
                age = inInt.nextInt();
                user = new Member(name,pass,email,gender,age);
                lom.add(user);
+               break;
+            case 'H':
+            case 'h':
+               System.out.println("What hashtag are you looking for?");
+               hTag = inLine.next();
                break;
             case 'L':
             case 'l':
@@ -118,6 +124,8 @@ public class Menu
             case 'c':
             case 'C':
                //check tags
+               nonHoot = new NonmemberHootFeed();
+               nonHoot.amITagged(name);
                break;
             default: 
                System.out.println("You've pressed a key not on our list. Please try again.");  
