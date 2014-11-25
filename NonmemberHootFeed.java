@@ -95,9 +95,9 @@ public class NonmemberHootFeed
 		for(int pageNum = 0; pageNum < pages; pageNum++){
 			int pn = pages - pageNum;
 			System.out.println("\nPage " + pn + " of " + pages + ".");
-			for(int entryNum = 0; entryNum < 5; entryNum++;){
-				System.out.print(users[numOfHoots - ( ( pageNum * ) + 1 + entry ) ] + ": ");
-				System.out.print(hoots[numOfHoots - ( ( pageNum * ) + 1 + entry ) ] + "\n\n");
+			for(int entryNum = 0; entryNum < 5; entryNum++){
+				System.out.print(users[numOfHoots - ( ( pageNum * 5) + 1 + entryNum ) ] + ": ");
+				System.out.print(hoots[numOfHoots - ( ( pageNum * 5) + 1 + entryNum ) ] + "\n\n");
 			}
 			Scanner in = new Scanner(System.in);
 			System.out.println("\nLoad another page?(y/n)");

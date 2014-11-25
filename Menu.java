@@ -9,8 +9,8 @@ public class Menu
    
    String name, pass, email, line, hoot, hTag;
    char gender, val;
-   int age;
-   boolean username, program = true, pubPri;
+   int age, username;
+   boolean program = true, pubPri;
    Member user = new Member();
    ListofMembers lom = new ListofMembers();
    ListOfHoots loh = new ListOfHoots();
@@ -84,7 +84,7 @@ public class Menu
                System.out.print("Enter username to search: ");
                name = inLine.next();
                username = lom.searchUser(name);
-               if (username == true)
+               if (username != 0)
                {
                   System.out.println("Username found.");
                }
