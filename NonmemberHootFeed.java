@@ -4,8 +4,10 @@ import java.io.BufferedReader.*;
 
 public class NonmemberHootFeed
 {
-	public NonmemberHootFeed()throws FileNotFoundException, IOException
-   {
+	public NonmemberHootFeed()throws FileNotFoundException, IOException{
+	}
+	
+	public void viewNonmemberHootFeed()throws FileNotFoundException, IOException{
 		BufferedReader reader = new BufferedReader(new FileReader("hootFile.txt"));
 
 		boolean priOrPub;
