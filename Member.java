@@ -70,19 +70,205 @@ public class Member
    //Battle setters and adders
    
    public void setWin(int val){
-      win = val;
+      //win = val;
+      BufferedReader reader = new BufferedReader(new FileReader("output.txt"));
+      int winNum = 0;
+      boolean foundUser = false;
+      String[][] users = new String[1000][8];
+      int numOfUsers = 0;
+      String line = reader.readLine();
+      while (line != null) {
+         String parts[] = line.split(" ");
+         users[numOfUsers][0] = parts[0]; //username
+         users[numOfUsers][1] = parts[1]; //password
+         users[numOfUsers][2] = parts[2]; //email
+         users[numOfUsers][3] = parts[3]; //age
+         users[numOfUsers][4] = parts[4]; //gender
+         users[numOfUsers][5] = parts[5]; //wins
+         users[numOfUsers][6] = parts[6]; //losses
+         users[numOfUsers][7] = parts[7]; //CHALLENGES
+         if(username.compareTo(parts[0])==0) {
+            foundUser = true;
+            int originalWinNum = Integer.parseInt(parts[5]);
+            winNum = val;
+            parts[5] = Integer.toString(winNum);
+         }
+      }
+      if(foundUser==true){
+         PrintWriter pw = new PrintWriter("output.txt");
+         pw.close();
+         
+         FileWriter out = new FileWriter("output.txt",true);
+         try {
+            for(int i = 0; i > numOfUsers; i++){
+               out.write(users[i][0] + " ");
+               out.write(users[i][1] + " ");
+               out.write(users[i][2] + " ");
+               out.write(users[i][3] + " ");
+               out.write(users[i][4] + " ");
+               out.write(users[i][5] + " ");
+               out.write(users[i][6] + " ");
+               out.write(users[i][7] + "\n");
+            }
+            
+         }
+         catch(IOException a){System.out.println("It didn't work. It did not work.");}
+      }
+      else {
+         System.out.println("I am so sorry, something went wrong...");
+      }
+      
    }
    
    public void setLoss(int val){
-      loss = val;
+      //loss = val;
+      BufferedReader reader = new BufferedReader(new FileReader("output.txt"));
+      int lossNum = 0;
+      boolean foundUser = false;
+      String[][] users = new String[1000][8];
+      int numOfUsers = 0;
+      String line = reader.readLine();
+      while (line != null) {
+         String parts[] = line.split(" ");
+         users[numOfUsers][0] = parts[0]; //username
+         users[numOfUsers][1] = parts[1]; //password
+         users[numOfUsers][2] = parts[2]; //email
+         users[numOfUsers][3] = parts[3]; //age
+         users[numOfUsers][4] = parts[4]; //gender
+         users[numOfUsers][5] = parts[5]; //wins
+         users[numOfUsers][6] = parts[6]; //losses
+         users[numOfUsers][7] = parts[7]; //CHALLENGES
+         if(username.compareTo(parts[0])==0) {
+            foundUser = true;
+            int originalLossNum = Integer.parseInt(parts[6]);
+            lossNum = val;
+            parts[6] = Integer.toString(lossNum);
+            
+         }
+      }
+      if(foundUser==true){
+         PrintWriter pw = new PrintWriter("output.txt");
+         pw.close();
+         
+         FileWriter out = new FileWriter("output.txt",true);
+         try {
+            for(int i = 0; i > numOfUsers; i++){
+               out.write(users[i][0] + " ");
+               out.write(users[i][1] + " ");
+               out.write(users[i][2] + " ");
+               out.write(users[i][3] + " ");
+               out.write(users[i][4] + " ");
+               out.write(users[i][5] + " ");
+               out.write(users[i][6] + " ");
+               out.write(users[i][7] + "\n");
+            }
+            
+         }
+         catch(IOException a){System.out.println("It didn't work. It did not work.");}
+      }
+      else {
+         System.out.println("I am so sorry, something went wrong...");
+      }
    }
    
    public void addWin(int val){
-      win = win + val;
+      //win = win + val;
+      BufferedReader reader = new BufferedReader(new FileReader("output.txt"));
+      int winNum = 0;
+      boolean foundUser = false;
+      String[][] users = new String[1000][8];
+      int numOfUsers = 0;
+      String line = reader.readLine();
+      while (line != null) {
+         String parts[] = line.split(" ");
+         users[numOfUsers][0] = parts[0]; //username
+         users[numOfUsers][1] = parts[1]; //password
+         users[numOfUsers][2] = parts[2]; //email
+         users[numOfUsers][3] = parts[3]; //age
+         users[numOfUsers][4] = parts[4]; //gender
+         users[numOfUsers][5] = parts[5]; //wins
+         users[numOfUsers][6] = parts[6]; //losses
+         users[numOfUsers][7] = parts[7]; //CHALLENGES
+         if(username.compareTo(parts[0])==0) {
+            foundUser = true;
+            int originalWinNum = Integer.parseInt(parts[5]);
+            winNum = originalWinNum+val;
+            parts[5] = Integer.toString(winNum);
+         }
+      }
+      if(foundUser==true){
+         PrintWriter pw = new PrintWriter("output.txt");
+         pw.close();
+         
+         FileWriter out = new FileWriter("output.txt",true);
+         try {
+            for(int i = 0; i > numOfUsers; i++){
+               out.write(users[i][0] + " ");
+               out.write(users[i][1] + " ");
+               out.write(users[i][2] + " ");
+               out.write(users[i][3] + " ");
+               out.write(users[i][4] + " ");
+               out.write(users[i][5] + " ");
+               out.write(users[i][6] + " ");
+               out.write(users[i][7] + "\n");
+            }
+            
+         }
+         catch(IOException a){System.out.println("It didn't work. It did not work.");}
+      }
+      else {
+         System.out.println("I am so sorry, something went wrong...");
+      }
    }
    
    public void addLoss(int val){
-      loss = loss + val;
+      //loss = loss + val;
+      BufferedReader reader = new BufferedReader(new FileReader("output.txt"));
+      int lossNum = 0;
+      boolean foundUser = false;
+      String[][] users = new String[1000][8];
+      int numOfUsers = 0;
+      String line = reader.readLine();
+      while (line != null) {
+         String parts[] = line.split(" ");
+         users[numOfUsers][0] = parts[0]; //username
+         users[numOfUsers][1] = parts[1]; //password
+         users[numOfUsers][2] = parts[2]; //email
+         users[numOfUsers][3] = parts[3]; //age
+         users[numOfUsers][4] = parts[4]; //gender
+         users[numOfUsers][5] = parts[5]; //wins
+         users[numOfUsers][6] = parts[6]; //losses
+         users[numOfUsers][7] = parts[7]; //CHALLENGES
+         if(username.compareTo(parts[0])==0) {
+            foundUser = true;
+            int originalLossNum = Integer.parseInt(parts[6]);
+            lossNum = originalLossNum+val;
+            parts[6] = Integer.toString(lossNum);
+         }
+      }
+      if(foundUser==true){
+         PrintWriter pw = new PrintWriter("output.txt");
+         pw.close();
+         
+         FileWriter out = new FileWriter("output.txt",true);
+         try {
+            for(int i = 0; i > numOfUsers; i++){
+               out.write(users[i][0] + " ");
+               out.write(users[i][1] + " ");
+               out.write(users[i][2] + " ");
+               out.write(users[i][3] + " ");
+               out.write(users[i][4] + " ");
+               out.write(users[i][5] + " ");
+               out.write(users[i][6] + " ");
+               out.write(users[i][7] + "\n");
+            }
+            
+         }
+         catch(IOException a){System.out.println("It didn't work. It did not work.");}
+      }
+      else {
+         System.out.println("I am so sorry, something went wrong...");
+      }
    }
    
    public void issueChallenge(String rival) throws FileNotFoundException, IOException{
@@ -108,7 +294,6 @@ public class Member
             int originalChalNum = Integer.parseInt(parts[7]);
             chalNum = originalChalNum++;
             parts[7] = Integer.toString(chalNum);
-            break;
          }
          
          
