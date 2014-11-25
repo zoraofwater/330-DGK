@@ -96,7 +96,7 @@ public class Member
       }
       if(foundUser==true){
          PrintWriter pw = new PrintWriter("output.txt");
-         pw.close();
+         
          
          FileWriter out = new FileWriter("output.txt",true);
          try {
@@ -113,6 +113,7 @@ public class Member
             
          }
          catch(IOException a){System.out.println("It didn't work. It did not work.");}
+         pw.close();
       }
       else {
          System.out.println("I am so sorry, something went wrong...");
@@ -148,7 +149,7 @@ public class Member
       }
       if(foundUser==true){
          PrintWriter pw = new PrintWriter("output.txt");
-         pw.close();
+         
          
          FileWriter out = new FileWriter("output.txt",true);
          try {
@@ -165,6 +166,7 @@ public class Member
             
          }
          catch(IOException a){System.out.println("It didn't work. It did not work.");}
+         pw.close();
       }
       else {
          System.out.println("I am so sorry, something went wrong...");
@@ -253,7 +255,7 @@ public class Member
       }
       if(foundUser==true){
          PrintWriter pw = new PrintWriter("output.txt");
-         pw.close();
+         
          
          FileWriter out = new FileWriter("output.txt",true);
          try {
@@ -270,6 +272,7 @@ public class Member
             
          }
          catch(IOException a){System.out.println("It didn't work. It did not work.");}
+         pw.close();
       }
       else {
          System.out.println("I am so sorry, something went wrong...");
@@ -307,7 +310,7 @@ public class Member
       }
       if(foundUser==true){
          PrintWriter pw = new PrintWriter("output.txt");
-         pw.close();
+         
          
          FileWriter out = new FileWriter("output.txt",true);
          try {
@@ -324,6 +327,7 @@ public class Member
             
          }
          catch(IOException a){System.out.println("It didn't work. It did not work.");}
+         pw.close();
       }
       else {
          System.out.println("I am so sorry, but that person does not exist.");
