@@ -11,7 +11,7 @@ public class Menu
    char gender, val;
    int age;
    boolean username, program = true, pubPri;
-   Member user;
+   Member user = new Member();
    ListofMembers lom = new ListofMembers();
    ListOfHoots loh = new ListOfHoots();
    Hoot hot;
@@ -29,6 +29,8 @@ public class Menu
          System.out.println("F: View Subscription Hoot Feed");
          System.out.println("U: Update records");
          System.out.println("C: Check for hoots tagged");
+         System.out.println("W: Add win to record");
+         System.out.println("O: Add loss to record");
       }
       else if (login2 == false)
       {
@@ -60,7 +62,7 @@ public class Menu
                gender = inChar.nextLine().charAt(0);
                System.out.print("Enter age (Must be 10+ to make an account): ");
                age = inInt.nextInt();
-               user = new Member(name,pass,email,gender,age);
+               user.addMember(name,pass,email,gender,age);
                lom.add(user);
                sub.update(lom.getSize());
                break;
@@ -75,6 +77,7 @@ public class Menu
             case 'V':
             case 'v':
                nonHoot = new NonmemberHootFeed();
+               //nonHoot.viewNonmemberHootFeed();
                break;
             case 'M':
             case 'm':
@@ -129,6 +132,15 @@ public class Menu
                //check tags
                nonHoot = new NonmemberHootFeed();
                nonHoot.amITagged(name);
+               break;
+            case 'w':
+            case 'W':
+               System.out.print("How many wins would you like to add? ");
+               int win = inInt.nextInt();
+               user.addWin(win);
+               break;
+            case 'o':
+            case 'O':
                break;
             default: 
                System.out.println("You've pressed a key not on our list. Please try again.");  

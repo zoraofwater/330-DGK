@@ -8,7 +8,10 @@ import java.io.BufferedWriter;
 
 public class Member
 {
-   Member(String name, String pass, String mail, char gen, int ag)
+   Member()
+   {}
+
+   public void addMember(String name, String pass, String mail, char gen, int ag)
    {
       gender = gen;
       username = name;
@@ -112,7 +115,7 @@ public class Member
          numOfUsers++;
          line = reader.readLine();
       }
-      if(founduser==true){
+      if(foundUser==true){
          PrintWriter pw = new PrintWriter("output.txt");
          pw.close();
          
@@ -130,6 +133,7 @@ public class Member
             }
             
          }
+         catch(IOException a){System.out.println("It didn't work. It did not work.");}
       }
       else {
          System.out.println("I am so sorry, but that person does not exist.");
