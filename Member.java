@@ -69,7 +69,7 @@ public class Member
    
    //Battle setters and adders
    
-   public void setWin(int val){
+   public void setWin(int val) throws FileNotFoundException, IOException{
       //win = val;
       BufferedReader reader = new BufferedReader(new FileReader("output.txt"));
       int winNum = 0;
@@ -120,7 +120,7 @@ public class Member
       
    }
    
-   public void setLoss(int val){
+   public void setLoss(int val) throws FileNotFoundException, IOException{
       //loss = val;
       BufferedReader reader = new BufferedReader(new FileReader("output.txt"));
       int lossNum = 0;
@@ -171,7 +171,7 @@ public class Member
       }
    }
    
-   public void addWin(int val){
+   public void addWin(int val, String username) throws FileNotFoundException, IOException{
       //win = win + val;
       BufferedReader reader = new BufferedReader(new FileReader("output.txt"));
       int winNum = 0;
@@ -189,20 +189,24 @@ public class Member
          users[numOfUsers][5] = parts[5]; //wins
          users[numOfUsers][6] = parts[6]; //losses
          users[numOfUsers][7] = parts[7]; //CHALLENGES
-         if(username.compareTo(parts[0])==0) {
+         System.out.println(username);
+         System.out.println(parts[0]);
+         if(username.equals(parts[0])) {
             foundUser = true;
             int originalWinNum = Integer.parseInt(parts[5]);
             winNum = originalWinNum+val;
             parts[5] = Integer.toString(winNum);
          }
+         line = reader.readLine();
       }
+      System.out.println(numOfUsers);
+      System.out.println(foundUser);
       if(foundUser==true){
          PrintWriter pw = new PrintWriter("output.txt");
-         pw.close();
-         
          FileWriter out = new FileWriter("output.txt",true);
          try {
             for(int i = 0; i > numOfUsers; i++){
+            System.out.println("Inforloop");
                out.write(users[i][0] + " ");
                out.write(users[i][1] + " ");
                out.write(users[i][2] + " ");
@@ -215,13 +219,14 @@ public class Member
             
          }
          catch(IOException a){System.out.println("It didn't work. It did not work.");}
+         pw.close();
       }
       else {
          System.out.println("I am so sorry, something went wrong...");
       }
    }
    
-   public void addLoss(int val){
+   public void addLoss(int val) throws FileNotFoundException, IOException{
       //loss = loss + val;
       BufferedReader reader = new BufferedReader(new FileReader("output.txt"));
       int lossNum = 0;

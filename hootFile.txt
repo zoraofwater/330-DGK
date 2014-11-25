@@ -7,3 +7,5 @@
 { J03y 0 STARTTHEHOOT fuck ENDTHEHOOT ( ) [ ] }
 { J03y 0 STARTTHEHOOT I can't wait til I'm 21 ENDTHEHOOT ( ) [ ] }
 { J03y 0 STARTTHEHOOT Hashtag #hashtag ENDTHEHOOT ( ) [ hashtag ] }
+{ J03y 0 STARTTHEHOOT Yo! ENDTHEHOOT ( ) [ ] }
+{ J03y 1 STARTTHEHOOT Fargle ENDTHEHOOT ( ) [ ] }

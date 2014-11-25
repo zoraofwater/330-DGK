@@ -77,7 +77,7 @@ public class Menu
             case 'V':
             case 'v':
                nonHoot = new NonmemberHootFeed();
-               //nonHoot.viewNonmemberHootFeed();
+               nonHoot.viewNonmemberHootFeed();
                break;
             case 'M':
             case 'm':
@@ -137,7 +137,7 @@ public class Menu
             case 'W':
                System.out.print("How many wins would you like to add? ");
                int win = inInt.nextInt();
-               user.addWin(win);
+               user.addWin(win, name);
                break;
             case 'o':
             case 'O':
