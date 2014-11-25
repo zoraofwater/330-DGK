@@ -35,7 +35,7 @@ public class ListOfHoots
 				}
 				
 			}
-			out.write(" ) [ ");
+			out.write(") [ ");
 			//find all tagged users
 			for(String str : parts){
 				char[] word = str.toCharArray();
@@ -43,7 +43,7 @@ public class ListOfHoots
 					out.write(str.substring(1) + " ");	
 				}
 			}
-			out.write(" ] }\n");
+			out.write("] }\n");
 		}finally {
 			if (out != null){
 				out.close();
