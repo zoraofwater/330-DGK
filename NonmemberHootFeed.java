@@ -15,6 +15,9 @@ public class NonmemberHootFeed
 		String[] tUsers = new String[10];
 		String[] hTags = new String[10];
 		String line = reader.readLine();
+		String[] users = new String[1000];
+		String[] hoots = new String[1000];
+		int numOfHoots = 0;
 		while (line != null) {
 			String parts[] = line.split(" ");
 			
@@ -78,11 +81,46 @@ public class NonmemberHootFeed
 			}
 			
 			if (priOrPub == false){
-				System.out.println(uName + ":");
-				System.out.println(hootText + "\n\n");
 				
+				users[numOfHoots] = uName;
+				hoots[numOfHoots] = hootText;
+				numOfHoots++;
 			}
         		line = reader.readLine();
+		}
+		
+		int pages = numOfHoots / 5;
+		int lastPageSize = numOfHoots % 5;
+		boolean keepGoing = true;
+		for(int pageNum = 0; pageNum < pages; pageNum++){
+			int pn = pages - pageNum;
+			System.out.println("\nPage " + pn + " of " + pages + ".");
+			for(int entryNum = 0; entryNum < 5; entryNum++;){
+				System.out.print(users[numOfHoots - ( ( pageNum * ) + 1 + entry ) ] + ": ");
+				System.out.print(hoots[numOfHoots - ( ( pageNum * ) + 1 + entry ) ] + "\n\n");
+			}
+			Scanner in = new Scanner(System.in);
+			System.out.println("\nLoad another page?(y/n)");
+			String ans = "x";
+			ans = in.next();
+			ans = ans.toLowerCase();
+			while(ans.compareTo("y") != 0 && ans.compareTo("n") != 0 ){
+				System.out.println("Sorry, that is not a valid answer.");
+				System.out.println("Load another page?(y/n)");
+				ans = in.next();
+				ans = ans.toLowerCase();
+			}
+			if(ans.compareTo("n") == 0){
+				keepGoing = false;
+				break;
+			}
+			
+		}
+		if(keepGoing==true){
+			for(int i = lastPageSize; lastPageSize > 0; lastPageSize--){
+				System.out.print(users[lastPageSize-1] + ": ");
+				System.out.print(hoots[lastPageSize-1] + "\n");
+			}
 		}
 	}
 	
@@ -92,7 +130,7 @@ public class NonmemberHootFeed
 		String[] tagHoots = new String[1000];
 		String[] tagUsers = new String[1000];
 		String[] tUsers = new String[10];
-      String line = reader.readLine();
+      		String line = reader.readLine();
 		while (line != null) {
 			String parts[] = line.split(" ");
 			
@@ -154,10 +192,10 @@ public class NonmemberHootFeed
 			int pages = tagCount / 5;
 			int lastPageSize = tagCount % 5;
 			boolean keepGoing = true;
-			for(int pageNum = 0; pageNum < 0; pageNum++){
+			for(int pageNum = 0; pageNum < pages; pageNum++){
 				int pn = pages - pageNum;
 				System.out.println("\nPage " + pn + " of " + pages + ".");
-				for(int entryNum = 0; entryNum > 5; entryNum++){
+				for(int entryNum = 0; entryNum < 5; entryNum++){
 					System.out.print(tagUsers[tagCount - ( ( pageNum * 5 ) + 1 + entryNum)] + ": ");
 					System.out.print(tagHoots[tagCount - ( ( pageNum * 5 ) + 1 + entryNum)] + "\n\n");
 				}
