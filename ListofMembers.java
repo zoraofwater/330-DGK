@@ -15,8 +15,11 @@ public class ListofMembers
          out.write(object.getAge() + " ");
          out.write(object.getGender() + " ");
          out.write(object.getWin() + " ");
+         System.out.println("Win" + object.getWin() + "*");
          out.write(object.getLoss() + " ");
+         System.out.println("Loss" + object.getLoss()+ "*");
          out.write(object.getChallenges() + '\n');
+         System.out.println("Chal" + object.getChallenges() + "*");
       }finally {
          if (out != null)
          {
@@ -63,10 +66,11 @@ public class ListofMembers
       return user;
    }
    
-   public boolean searchUser(String name) throws IOException
+   public int searchUser(String name) throws IOException
    {
+      int num = 1;
       br = new BufferedReader(new FileReader("output.txt"));
-      boolean user = true;
+      boolean user = false;
       String line = br.readLine(), line2 = "";;
            
       while(line != null)
@@ -75,18 +79,17 @@ public class ListofMembers
          
          if(name.equals(line2))
          {
-            user = true;
+            count = num;
             line = null;
          }
          else
          {
-            user = false;
+            num++;
             line = br.readLine();
          }
          line2 = "";
-         count = 0;
       }
-      return user;
+      return count;
    }
    
    public String getWord(String temp)
