@@ -7,12 +7,14 @@ public class Menu
 {
    public static Scanner inLine = new Scanner(System.in), inChar = new Scanner(System.in), inInt = new Scanner(System.in);
    
-   String name, pass, email, line;
-   char gender;
+   String name, pass, email, line, hoot;
+   char gender, val;
    int age;
-   boolean username, program = true;
+   boolean username, program = true, pubPri;
    Member user;
    ListofMembers lom = new ListofMembers();
+   ListOfHoots loh = new ListOfHoots();
+   Hoot hot;
    NonmemberHootFeed nonHoot;
    public void seeMenu(boolean login2, String memName)
    {
@@ -85,7 +87,20 @@ public class Menu
                break;
             case 'p':
             case 'P':
-               //add hoot
+               System.out.println("What's on your mind?");
+               hoot = inLine.nextLine();
+               System.out.println("Would you like to make this hoot public? y/n?");
+               val = inChar.next().charAt(0);
+               if(val =='y' || val == 'Y')
+               {
+                  pubPri = false;
+               }
+               else
+               {
+                  pubPri = true;
+               }
+               hot = new Hoot(name,pubPri,hoot);
+               loh.insert(hot);
                break;
             case 's':
             case 'S':
