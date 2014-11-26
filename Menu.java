@@ -127,8 +127,8 @@ public class Menu
             case 'f':
             case 'F':
                //subscribe hoot feed
-               memHootFeed = new MemberHootFeed();
-               memHootFeed.viewMemberHootFeed(name, sub)
+               MemberHootFeed memHootFeed = new MemberHootFeed();
+               memHootFeed.viewMemberHootFeed(name);
                break;
             case 'c':
             case 'C':

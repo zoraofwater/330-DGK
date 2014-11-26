@@ -102,10 +102,26 @@ public class Subscribe
    
    public void add(String member, String user) throws IOException
    {
-      int count = 0, num = lom.searchUser(member) - 1, num2 = lom.searchUser(user)-1;
+      int count = 0, num = lom.searchUserLine(member) - 1, num2 = lom.searchUserLine(user)-1;
       
       System.out.println(num + " " + num2);
       
       list[num2][num] = '1';
+   }
+   
+   public boolean searchSub(String member, String user) throws IOException
+   {
+      int count = 0, num = lom.searchUserLine(member) - 1, num2 = lom.searchUserLine(user)-1;
+      boolean subby;
+   
+      if(list[num2][num] == '1')
+      {
+         subby = true;
+      }
+      else
+      {
+         subby = false;
+      }
+      return subby;
    }
 }

@@ -1,6 +1,5 @@
-{ USERNAME PUB/PRI STARTTHEHOOT HOOT HOOT HOOT HOOT HOOT ENDTHEHOOT ( TAGGEDUSER1 TAGGEDUSER2 TAGGEDUSER3 ... ) [ HASHTAG1 HASHTAG2 HASHTAG 3 ... ] }
-{ Jo3y 0 STARTTHEHOOT My Rattata evolved! Now my Raticate is in the top percentage of Raticates! #Top10 ENDTHEHOOT [#Top10]}
-{ Jo3y 1 STARTTHEHOOT Not Much ENDTHEHOOT ( ) [ ]}
+{ J03y 0 STARTTHEHOOT My Rattata evolved! Now my Raticate is in the top percentage of Raticates! #Top10 ENDTHEHOOT [#Top10]}
+{ J03y 1 STARTTHEHOOT Not Much ENDTHEHOOT ( ) [ ]}
 { J03y 0 STARTTHEHOOT Not Much ENDTHEHOOT ( ) [ ]}
 { J03y 0 STARTTHEHOOT fuuuuuuuuck this shite ENDTHEHOOT ( J03y ) [ ] }
 { J03y 0 STARTTHEHOOT I'm a sexy widdle baby ENDTHEHOOT ( ) [ ] }
@@ -17,4 +16,3 @@
 { aldsjf 1 STARTTHEHOOT aldsjf private hoot ENDTHEHOOT ( ) [ ] }
 { bob 1 STARTTHEHOOT bob private hoot ENDTHEHOOT ( ) [ ] }
 { danny 1 STARTTHEHOOT danny private hoot2 ENDTHEHOOT ( ) [ ] }
-{ apples 1 STARTTHEHOOT apples private hot ENDTHEHOOT ( ) [ ] }
