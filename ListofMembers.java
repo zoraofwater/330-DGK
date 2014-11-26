@@ -93,6 +93,14 @@ public class ListofMembers
          
          if(name.equals(line2))
          {
+            String parts[] = line.split(" ");
+            System.out.println("Username: " + parts[0]);
+            System.out.println("Age: " + parts[3]);
+            System.out.println("Gender: " + parts[4]);
+            System.out.println("Battles won: " + parts[5]);
+            System.out.println("Battles lost: " + parts[6]);
+            System.out.println("Current pending challenges: " + parts[7]);
+            System.out.println("Email: " + parts[2]);
             count = num;
             line = null;
          }
