@@ -107,7 +107,7 @@ public class Member
             Member person = new Member();
             int ag = Integer.parseInt(users[i][3]);
             char[] gen = users[i][4].toCharArray();
-            person.addMember(users[i][0], users[i][1], users[i][2], gen[0], ag)
+            person.addMember(users[i][0], users[i][1], users[i][2], gen[0], ag);
             int wi = Integer.parseInt(users[i][5]);
             int lo = Integer.parseInt(users[i][6]);
             int ch = Integer.parseInt(users[i][7]);
@@ -162,7 +162,7 @@ public class Member
             Member person = new Member();
             int ag = Integer.parseInt(users[i][3]);
             char[] gen = users[i][4].toCharArray();
-            person.addMember(users[i][0], users[i][1], users[i][2], gen[0], ag)
+            person.addMember(users[i][0], users[i][1], users[i][2], gen[0], ag);
             int wi = Integer.parseInt(users[i][5]);
             int lo = Integer.parseInt(users[i][6]);
             int ch = Integer.parseInt(users[i][7]);
@@ -178,8 +178,6 @@ public class Member
 
             
          }
-         catch(IOException a){System.out.println("It didn't work. It did not work.");}
-         pw.close();
       }
       else {
          System.out.println("I am so sorry, something went wrong...");
@@ -222,7 +220,7 @@ public class Member
             Member person = new Member();
             int ag = Integer.parseInt(users[i][3]);
             char[] gen = users[i][4].toCharArray();
-            person.addMember(users[i][0], users[i][1], users[i][2], gen[0], ag)
+            person.addMember(users[i][0], users[i][1], users[i][2], gen[0], ag);
             int wi = Integer.parseInt(users[i][5]);
             int lo = Integer.parseInt(users[i][6]);
             int ch = Integer.parseInt(users[i][7]);
@@ -276,7 +274,7 @@ public class Member
             Member person = new Member();
             int ag = Integer.parseInt(users[i][3]);
             char[] gen = users[i][4].toCharArray();
-            person.addMember(users[i][0], users[i][1], users[i][2], gen[0], ag)
+            person.addMember(users[i][0], users[i][1], users[i][2], gen[0], ag);
             int wi = Integer.parseInt(users[i][5]);
             int lo = Integer.parseInt(users[i][6]);
             int ch = Integer.parseInt(users[i][7]);
@@ -334,7 +332,7 @@ public class Member
             Member person = new Member();
             int ag = Integer.parseInt(users[i][3]);
             char[] gen = users[i][4].toCharArray();
-            person.addMember(users[i][0], users[i][1], users[i][2], gen[0], ag)
+            person.addMember(users[i][0], users[i][1], users[i][2], gen[0], ag);
             int wi = Integer.parseInt(users[i][5]);
             int lo = Integer.parseInt(users[i][6]);
             int ch = Integer.parseInt(users[i][7]);
@@ -349,9 +347,6 @@ public class Member
             //out.write(users[i][7] + "\n");
             
          }
-         catch(IOException a){System.out.println("It didn't work. It did not work.");}
-         pw.close();
-         out.close();
       }
       else {
          System.out.println("I am so sorry, but that person does not exist.");
