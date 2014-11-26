@@ -77,10 +77,8 @@ public class ListofMembers
       return user;
    }
    
-   public int searchUser(String name) throws IOException
+   public void searchUser(String name) throws IOException
    {
-      int num = 1;
-      count = 0;
       br = new BufferedReader(new FileReader("output.txt"));
       boolean user = false;
       String line = br.readLine(), line2 = "";;
@@ -98,17 +96,42 @@ public class ListofMembers
             System.out.println("Battles lost: " + parts[6]);
             System.out.println("Current pending challenges: " + parts[7]);
             System.out.println("Email: " + parts[2]);
+            line = null;
+            user = true;
+         }
+         else
+         {
+            line = br.readLine();  
+         }
+      }
+      if(user == false);
+      {
+         System.out.println("Username not found.");
+      }
+   }
+   
+   public int searchUserLine(String name) throws IOException
+   {
+      int num = 1;
+      count = 0;
+      br = new BufferedReader(new FileReader("output.txt"));
+      boolean user = false;
+      String line = br.readLine(), line2 = "";
+           
+      while(line != null)
+      {
+         line2 = getUser(line);
+         if(name.equals(line2))
+         {
             count = num;
             line = null;
-            break;
          }
          else
          {
             num++;
-            
+            line = br.readLine();
          }
-         line = br.readLine();
-         //line2 = "";
+         line2 = "";
       }
       return count;
    }

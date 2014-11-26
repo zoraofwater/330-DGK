@@ -10,7 +10,7 @@ public class Menu
    String name, pass, email, line, hoot, hTag;
    char gender, val;
    int age, username;
-   boolean program = true, pubPri, register;
+   boolean program = true, pubPri, register, search;
    Member user = new Member();
    ListofMembers lom = new ListofMembers();
    ListOfHoots loh = new ListOfHoots();
@@ -94,14 +94,7 @@ public class Menu
             case 'm':
                System.out.print("Enter username to search: ");
                name = inLine.next();
-               username = lom.searchUser(name);
-               if (username != 0)
-               {
-               }
-               else
-               {
-                  System.out.println("Username not found.");
-               }
+               lom.searchUser(name);
                break;
             case 'Q':
             case 'q':
