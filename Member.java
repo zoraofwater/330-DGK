@@ -328,6 +328,7 @@ public class Member
          }
          catch(IOException a){System.out.println("It didn't work. It did not work.");}
          pw.close();
+         out.close();
       }
       else {
          System.out.println("I am so sorry, but that person does not exist.");

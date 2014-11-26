@@ -56,7 +56,7 @@ public class Menu
                while(validName==false){
                   System.out.print("Enter username: ");
                   name = inLine.next();
-                  if(lom.userExists(name)) {
+                  if(!lom.userExists(name)) {
                      validName=true;
                   }
                   else {
@@ -95,7 +95,6 @@ public class Menu
                username = lom.searchUser(name);
                if (username != 0)
                {
-                  System.out.println("Username found.");
                }
                else
                {

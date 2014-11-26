@@ -15,12 +15,8 @@ public class ListofMembers
          out.write(object.getAge() + " ");
          out.write(object.getGender() + " ");
          out.write(object.getWin() + " ");
-         System.out.println("Win" + object.getWin() + "*");
          out.write(object.getLoss() + " ");
-         System.out.println("Loss" + object.getLoss()+ "*");
-         out.write(object.getChallenges());
-         out.write("\n");
-         System.out.println("Chal" + object.getChallenges() + "*");
+         out.write(object.getChallenges() + "\n");
       }finally {
          if (out != null)
          {
@@ -36,8 +32,10 @@ public class ListofMembers
       while(line != null){
          String parts[] = line.split(" ");
          if(name.equals(parts[0])) {
+         System.out.println("inthere");
             return true;
          }
+         line = br.readLine();
       }
       return false;
       
@@ -89,11 +87,11 @@ public class ListofMembers
            
       while(line != null)
       {  
-         line2 = getWord(line);
-         
-         if(name.equals(line2))
+         //line2 = getWord(line);
+         String[] parts = line.split(" ");
+         System.out.println(parts[0]);
+         if(name.equals(parts[0]))
          {
-            String parts[] = line.split(" ");
             System.out.println("Username: " + parts[0]);
             System.out.println("Age: " + parts[3]);
             System.out.println("Gender: " + parts[4]);
@@ -103,13 +101,15 @@ public class ListofMembers
             System.out.println("Email: " + parts[2]);
             count = num;
             line = null;
+            break;
          }
          else
          {
             num++;
-            line = br.readLine();
+            
          }
-         line2 = "";
+         line = br.readLine();
+         //line2 = "";
       }
       return count;
    }
