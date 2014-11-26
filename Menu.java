@@ -52,8 +52,17 @@ public class Menu
          {
             case 'r':
             case 'R':
-               System.out.print("Enter username: ");
-               name = inLine.next();
+               boolean validName = false;
+               while(validName==false){
+                  System.out.print("Enter username: ");
+                  name = inLine.next();
+                  if(lom.userExists(name)) {
+                     validName=true;
+                  }
+                  else {
+                     System.out.println("I am so sorry, but someone has already taken that username.");
+                  }
+               }
                System.out.print("Enter password: ");
                pass = inLine.next();
                System.out.print("Enter email: ");
