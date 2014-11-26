@@ -106,4 +106,20 @@ public class Subscribe
       
       list[num2][num] = '1';
    }
+   
+   public boolean searchSub(String member, String user) throws IOException
+   {
+      int count = 0, num = lom.searchUserLine(member) - 1, num2 = lom.searchUserLine(user)-1;
+      boolean subby;
+   
+      if(list[num2][num] == '1')
+      {
+         subby = true;
+      }
+      else
+      {
+         subby = false;
+      }
+      return subby;
+   }
 }
