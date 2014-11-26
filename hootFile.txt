@@ -9,3 +9,12 @@
 { J03y 0 STARTTHEHOOT Hashtag #hashtag ENDTHEHOOT ( ) [ hashtag ] }
 { J03y 0 STARTTHEHOOT Yo! ENDTHEHOOT ( ) [ ] }
 { J03y 1 STARTTHEHOOT Fargle ENDTHEHOOT ( ) [ ] }
+{ danny 1 STARTTHEHOOT danny private hoot ENDTHEHOOT ( ) [ ] }
+{ derpa 1 STARTTHEHOOT derpa private hoot ENDTHEHOOT ( ) [ ] }
+{ derp 1 STARTTHEHOOT derp private hoot ENDTHEHOOT ( ) [ ] }
+{ akldsfm 1 STARTTHEHOOT akldsfm private hoot ENDTHEHOOT ( ) [ ] }
+{ J03y 1 STARTTHEHOOT J03y private hoot ENDTHEHOOT ( ) [ ] }
+{ aldsjf 1 STARTTHEHOOT aldsjf private hoot ENDTHEHOOT ( ) [ ] }
+{ bob 1 STARTTHEHOOT bob private hoot ENDTHEHOOT ( ) [ ] }
+{ danny 1 STARTTHEHOOT danny private hoot2 ENDTHEHOOT ( ) [ ] }
+{ apples 1 STARTTHEHOOT apples private hot ENDTHEHOOT ( ) [ ] }
