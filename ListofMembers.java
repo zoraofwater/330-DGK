@@ -23,7 +23,6 @@ public class ListofMembers
             out.close();
          }
       }
-      //Subscribe,add(object.getUsername(), getSize());
    }
    
    public boolean userExists(String name) throws IOException{
@@ -49,13 +48,13 @@ public class ListofMembers
            
       while(line != null)
       {  
-         line2 = getWord(line);
+         line2 = getUser(line);
          
          if(name.equals(line2))
          {
             count++;
             
-            line2 = getWord(line);
+            line2 = getPass(line, count);
             if(pass.equals(line2))
             {
                user = true;
@@ -81,13 +80,13 @@ public class ListofMembers
    public int searchUser(String name) throws IOException
    {
       int num = 1;
+      count = 0;
       br = new BufferedReader(new FileReader("output.txt"));
       boolean user = false;
       String line = br.readLine(), line2 = "";;
            
       while(line != null)
       {  
-         //line2 = getWord(line);
          String[] parts = line.split(" ");
          System.out.println(parts[0]);
          if(name.equals(parts[0]))
@@ -114,14 +113,28 @@ public class ListofMembers
       return count;
    }
    
-   public String getWord(String temp)
+   public String getUser(String temp)
    {
       String temp2 = "";
+      count = 0;
       for(char ch = temp.charAt(count); ch != ' '; ch = temp.charAt(count))
       {
          temp2 = temp2 + ch;
          count++;
       }
+      return temp2;
+   }
+   
+   public String getPass(String temp, int num)
+   {
+      String temp2 = "";
+      count = num;
+      for(char ch = temp.charAt(count); ch != ' '; ch = temp.charAt(count))
+      {
+         temp2 = temp2 + ch;
+         count++;
+      }
+      
       return temp2;
    }
    

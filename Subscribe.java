@@ -5,7 +5,10 @@ import java.io.BufferedReader.*;
 public class Subscribe
 {
    char[][] list;
-   Subscribe(int size) throws IOException, FileNotFoundException
+   ListofMembers lom = new ListofMembers();
+   int size = lom.getSize();
+   
+   Subscribe() throws IOException, FileNotFoundException
    {
       list = new char[size][size];
       int count = 0;
@@ -21,10 +24,10 @@ public class Subscribe
          line = reader.readLine();
          count++;
       }
-      printGraph(size);
+      printGraph();
    }
    
-   void printGraph(int size)
+   void printGraph()
    {
       System.out.println();
       for(int i = 0; i < size; i++)
@@ -36,27 +39,34 @@ public class Subscribe
          System.out.println();
       }
    }
-	public void update(int user) throws FileNotFoundException, IOException
+	public void update() throws FileNotFoundException, IOException
    {
       String temp = "";
-      String[] hold = new String[user];
-      int count = 0, size = user - 1, next;
+      String[] hold = new String[size];
+      int count = 0, size2 = size - 1, next;
 
       FileWriter out = new FileWriter("subscribe.txt");
       
-      for(int i = 0; i < user; i++)
+      for(int i = 0; i < size; i++)
       {
-         for(int j = 0; j < user; j++)
+         for(int j = 0; j < size; j++)
          {
-            if(j < size && i < size)
+            if(j < size2 && i < size2)
             {
                temp = temp + list[count][j];
             }
-            else if((j == size && i < size) || (j < size && i == size))
+            else if((j == size2 && i < size2) || (j < size2 && i == size2))
             {
-               temp = temp + '0';
+               if(list[i][j] == '1')
+               {
+                  temp = temp + list[i][j];
+               }
+               else
+               {
+                  temp = temp + '0';
+               }
             }
-            else if (j == size && i == size)
+            else if (j == size2 && i == size2)
             {
                temp = temp + '1';
             }
@@ -77,7 +87,7 @@ public class Subscribe
       
       try
       {
-         for(int i = 1; i < user; i++)
+         for(int i = 1; i < size; i++)
          {
             out2.write(hold[i]+'\n');
          }
@@ -87,21 +97,12 @@ public class Subscribe
       }
 	}
    
-   /*public void checkSubscribers(int user, int[] subs)
+   public void add(String member, String user) throws IOException
    {
-      int count = 0;
-      BufferedReader reader = new BufferedReader(new FileReader("subscribe.txt"));
-      String line = reader.readLine();
+      int count = 0, num = lom.searchUser(member) - 1, num2 = lom.searchUser(user)-1;
       
-      while(line != null)
-      {
-         for(int i = 0; i < size; i++)
-         {
-            list[count][i] = line.charAt(i);
-         }
-         line = reader.readLine();
-         count++;
-      }
-
-   }*/
+      System.out.println(num + " " + num2);
+      
+      list[num2][num] = '1';
+   }
 }

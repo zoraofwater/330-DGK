@@ -19,7 +19,7 @@ public class Menu
    NonmemberHootFeed nonHoot;
    public void seeMenu(boolean login2, String memName) throws IOException
    {
-      sub = new Subscribe(lom.getSize());
+      sub = new Subscribe();
       name = memName;
       System.out.println("Please select your option from the following menu: ");
       if(login2 == true)
@@ -73,7 +73,7 @@ public class Menu
                age = inInt.nextInt();
                user.addMember(name,pass,email,gender,age);
                lom.add(user);
-               sub.update(lom.getSize());
+               sub.update();
                break;
             case 'H':
             case 'h':
@@ -124,16 +124,16 @@ public class Menu
                break;
             case 's':
             case 'S':
-               //subscribe
+               System.out.print("Enter username to search: ");
+               String name2 = inLine.next();
+               sub.add(name2,name);
+               sub.update();
+
                break;
             case 'f':
             case 'F':
                //subscribe hoot feed
                nonHoot = new NonmemberHootFeed();
-               break;
-            case 'u':
-            case 'U':
-               // update user records
                break;
             case 'c':
             case 'C':
