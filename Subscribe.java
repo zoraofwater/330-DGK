@@ -39,11 +39,14 @@ public class Subscribe
          System.out.println();
       }
    }
-	public void update() throws FileNotFoundException, IOException
+	public void update(boolean register) throws FileNotFoundException, IOException
    {
       String temp = "";
+      size = lom.getSize();
       String[] hold = new String[size];
       int count = 0, size2 = size - 1, next;
+
+      System.out.println("number of users: " + size + " array size: " + size2);
 
       FileWriter out = new FileWriter("subscribe.txt");
       
@@ -57,7 +60,7 @@ public class Subscribe
             }
             else if((j == size2 && i < size2) || (j < size2 && i == size2))
             {
-               if(list[i][j] == '1')
+               if(register == false)
                {
                   temp = temp + list[i][j];
                }

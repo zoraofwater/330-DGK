@@ -10,7 +10,7 @@ public class Menu
    String name, pass, email, line, hoot, hTag;
    char gender, val;
    int age, username;
-   boolean program = true, pubPri;
+   boolean program = true, pubPri, register;
    Member user = new Member();
    ListofMembers lom = new ListofMembers();
    ListOfHoots loh = new ListOfHoots();
@@ -19,6 +19,7 @@ public class Menu
    NonmemberHootFeed nonHoot;
    public void seeMenu(boolean login2, String memName) throws IOException
    {
+      register = false;
       sub = new Subscribe();
       name = memName;
       System.out.println("Please select your option from the following menu: ");
@@ -71,9 +72,10 @@ public class Menu
                gender = inChar.nextLine().charAt(0);
                System.out.print("Enter age (Must be 10+ to make an account): ");
                age = inInt.nextInt();
+               register = true;
                user.addMember(name,pass,email,gender,age);
                lom.add(user);
-               sub.update();
+               sub.update(register);
                break;
             case 'H':
             case 'h':
@@ -127,8 +129,7 @@ public class Menu
                System.out.print("Enter username to search: ");
                String name2 = inLine.next();
                sub.add(name2,name);
-               sub.update();
-
+               sub.update(register);
                break;
             case 'f':
             case 'F':
