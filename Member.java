@@ -22,6 +22,12 @@ public class Member
       age = ag;
    }
    
+   public void putInBattleStats(int w, int l, int c){
+      win = w;
+      loss = l;
+      challenges = c;
+   }
+   
    public void printInfo()
    {
       System.out.print(username + " " + password + " " + email + " " + gender + " " + age);
@@ -95,25 +101,28 @@ public class Member
          }
       }
       if(foundUser==true){
-         PrintWriter pw = new PrintWriter("output.txt");
          
          
-         FileWriter out = new FileWriter("output.txt",true);
-         try {
-            for(int i = 0; i > numOfUsers; i++){
-               out.write(users[i][0] + " ");
-               out.write(users[i][1] + " ");
-               out.write(users[i][2] + " ");
-               out.write(users[i][3] + " ");
-               out.write(users[i][4] + " ");
-               out.write(users[i][5] + " ");
-               out.write(users[i][6] + " ");
-               out.write(users[i][7] + "\n");
-            }
-            
+         for(int i = 0; i > numOfUsers; i++){
+            Member person = new Member();
+            int ag = Integer.parseInt(parts[3]);
+            char[] gen = parts[4].toCharArray();
+            person.addMember(parts[0], parts[1], parts[2], gen[0], ag)
+            int wi = Integer.parseInt(parts[5]);
+            int lo = Integer.parseInt(parts[6]);
+            int ch = Integer.parseInt(parts[7]);
+            person.putInBattleStats(wi, lo, ch);
+            //.write(users[i][0] + " ");
+            //out.write(users[i][1] + " ");
+            //out.write(users[i][2] + " ");
+            //out.write(users[i][3] + " ");
+            //out.write(users[i][4] + " ");
+            //out.write(users[i][5] + " ");
+            //out.write(users[i][6] + " ");
+            //out.write(users[i][7] + "\n");
          }
-         catch(IOException a){System.out.println("It didn't work. It did not work.");}
-         pw.close();
+         
+        
       }
       else {
          System.out.println("I am so sorry, something went wrong...");
@@ -148,21 +157,25 @@ public class Member
          }
       }
       if(foundUser==true){
-         PrintWriter pw = new PrintWriter("output.txt");
          
-         
-         FileWriter out = new FileWriter("output.txt",true);
-         try {
-            for(int i = 0; i > numOfUsers; i++){
-               out.write(users[i][0] + " ");
-               out.write(users[i][1] + " ");
-               out.write(users[i][2] + " ");
-               out.write(users[i][3] + " ");
-               out.write(users[i][4] + " ");
-               out.write(users[i][5] + " ");
-               out.write(users[i][6] + " ");
-               out.write(users[i][7] + "\n");
-            }
+         for(int i = 0; i > numOfUsers; i++){
+            Member person = new Member();
+            int ag = Integer.parseInt(parts[3]);
+            char[] gen = parts[4].toCharArray();
+            person.addMember(parts[0], parts[1], parts[2], gen[0], ag)
+            int wi = Integer.parseInt(parts[5]);
+            int lo = Integer.parseInt(parts[6]);
+            int ch = Integer.parseInt(parts[7]);
+            person.putInBattleStats(wi, lo, ch);
+            //.write(users[i][0] + " ");
+            //out.write(users[i][1] + " ");
+            //out.write(users[i][2] + " ");
+            //out.write(users[i][3] + " ");
+            //out.write(users[i][4] + " ");
+            //out.write(users[i][5] + " ");
+            //out.write(users[i][6] + " ");
+            //out.write(users[i][7] + "\n");
+
             
          }
          catch(IOException a){System.out.println("It didn't work. It did not work.");}
@@ -204,24 +217,28 @@ public class Member
       System.out.println(numOfUsers);
       System.out.println(foundUser);
       if(foundUser==true){
-         PrintWriter pw = new PrintWriter("output.txt");
-         FileWriter out = new FileWriter("output.txt",true);
-         try {
-            for(int i = 0; i > numOfUsers; i++){
-            System.out.println("Inforloop");
-               out.write(users[i][0] + " ");
-               out.write(users[i][1] + " ");
-               out.write(users[i][2] + " ");
-               out.write(users[i][3] + " ");
-               out.write(users[i][4] + " ");
-               out.write(users[i][5] + " ");
-               out.write(users[i][6] + " ");
-               out.write(users[i][7] + "\n");
-            }
+         
+         for(int i = 0; i > numOfUsers; i++){
+            Member person = new Member();
+            int ag = Integer.parseInt(parts[3]);
+            char[] gen = parts[4].toCharArray();
+            person.addMember(parts[0], parts[1], parts[2], gen[0], ag)
+            int wi = Integer.parseInt(parts[5]);
+            int lo = Integer.parseInt(parts[6]);
+            int ch = Integer.parseInt(parts[7]);
+            person.putInBattleStats(wi, lo, ch);
+            //.write(users[i][0] + " ");
+            //out.write(users[i][1] + " ");
+            //out.write(users[i][2] + " ");
+            //out.write(users[i][3] + " ");
+            //out.write(users[i][4] + " ");
+            //out.write(users[i][5] + " ");
+            //out.write(users[i][6] + " ");
+            //out.write(users[i][7] + "\n");
+
             
          }
-         catch(IOException a){System.out.println("It didn't work. It did not work.");}
-         pw.close();
+         
       }
       else {
          System.out.println("I am so sorry, something went wrong...");
@@ -254,25 +271,28 @@ public class Member
          }
       }
       if(foundUser==true){
-         PrintWriter pw = new PrintWriter("output.txt");
          
-         
-         FileWriter out = new FileWriter("output.txt",true);
-         try {
-            for(int i = 0; i > numOfUsers; i++){
-               out.write(users[i][0] + " ");
-               out.write(users[i][1] + " ");
-               out.write(users[i][2] + " ");
-               out.write(users[i][3] + " ");
-               out.write(users[i][4] + " ");
-               out.write(users[i][5] + " ");
-               out.write(users[i][6] + " ");
-               out.write(users[i][7] + "\n");
-            }
+         for(int i = 0; i > numOfUsers; i++){
+            Member person = new Member();
+            int ag = Integer.parseInt(parts[3]);
+            char[] gen = parts[4].toCharArray();
+            person.addMember(parts[0], parts[1], parts[2], gen[0], ag)
+            int wi = Integer.parseInt(parts[5]);
+            int lo = Integer.parseInt(parts[6]);
+            int ch = Integer.parseInt(parts[7]);
+            person.putInBattleStats(wi, lo, ch);
+            //.write(users[i][0] + " ");
+            //out.write(users[i][1] + " ");
+            //out.write(users[i][2] + " ");
+            //out.write(users[i][3] + " ");
+            //out.write(users[i][4] + " ");
+            //out.write(users[i][5] + " ");
+            //out.write(users[i][6] + " ");
+            //out.write(users[i][7] + "\n");
+
             
          }
-         catch(IOException a){System.out.println("It didn't work. It did not work.");}
-         pw.close();
+
       }
       else {
          System.out.println("I am so sorry, something went wrong...");
@@ -309,21 +329,24 @@ public class Member
          line = reader.readLine();
       }
       if(foundUser==true){
-         PrintWriter pw = new PrintWriter("output.txt");
-         
-         
-         FileWriter out = new FileWriter("output.txt",true);
-         try {
-            for(int i = 0; i > numOfUsers; i++){
-               out.write(users[i][0] + " ");
-               out.write(users[i][1] + " ");
-               out.write(users[i][2] + " ");
-               out.write(users[i][3] + " ");
-               out.write(users[i][4] + " ");
-               out.write(users[i][5] + " ");
-               out.write(users[i][6] + " ");
-               out.write(users[i][7] + "\n");
-            }
+        
+         for(int i = 0; i > numOfUsers; i++){
+            Member person = new Member();
+            int ag = Integer.parseInt(parts[3]);
+            char[] gen = parts[4].toCharArray();
+            person.addMember(parts[0], parts[1], parts[2], gen[0], ag)
+            int wi = Integer.parseInt(parts[5]);
+            int lo = Integer.parseInt(parts[6]);
+            int ch = Integer.parseInt(parts[7]);
+            person.putInBattleStats(wi, lo, ch);
+            //.write(users[i][0] + " ");
+            //out.write(users[i][1] + " ");
+            //out.write(users[i][2] + " ");
+            //out.write(users[i][3] + " ");
+            //out.write(users[i][4] + " ");
+            //out.write(users[i][5] + " ");
+            //out.write(users[i][6] + " ");
+            //out.write(users[i][7] + "\n");
             
          }
          catch(IOException a){System.out.println("It didn't work. It did not work.");}
