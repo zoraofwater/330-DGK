@@ -119,7 +119,7 @@ public class NonmemberHootFeed
 		if(keepGoing==true){
 			for(int i = lastPageSize; lastPageSize > 0; lastPageSize--){
 				System.out.print(users[lastPageSize-1] + ": ");
-				System.out.print(hoots[lastPageSize-1] + "\n");
+				System.out.print(hoots[lastPageSize-1] + "\n\n");
 			}
 		}
 	}
