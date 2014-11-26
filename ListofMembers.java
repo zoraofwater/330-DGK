@@ -30,6 +30,19 @@ public class ListofMembers
       //Subscribe,add(object.getUsername(), getSize());
    }
    
+   public boolean userExists(String name) throws IOException{
+      br = new BufferedReader(new FileReader("output.txt"));
+      String line = br.readLine();
+      while(line != null){
+         String parts[] = line.split(" ");
+         if(name.equals(parts[0])) {
+            return true;
+         }
+      }
+      return false;
+      
+   }
+   
    public boolean searchLogin(String name, String pass) throws IOException
    {
       br = new BufferedReader(new FileReader("output.txt"));
