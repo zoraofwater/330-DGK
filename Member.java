@@ -105,12 +105,12 @@ public class Member
          
          for(int i = 0; i > numOfUsers; i++){
             Member person = new Member();
-            int ag = Integer.parseInt(parts[3]);
-            char[] gen = parts[4].toCharArray();
-            person.addMember(parts[0], parts[1], parts[2], gen[0], ag)
-            int wi = Integer.parseInt(parts[5]);
-            int lo = Integer.parseInt(parts[6]);
-            int ch = Integer.parseInt(parts[7]);
+            int ag = Integer.parseInt(users[i][3]);
+            char[] gen = users[i][4].toCharArray();
+            person.addMember(users[i][0], users[i][1], users[i][2], gen[0], ag)
+            int wi = Integer.parseInt(users[i][5]);
+            int lo = Integer.parseInt(users[i][6]);
+            int ch = Integer.parseInt(users[i][7]);
             person.putInBattleStats(wi, lo, ch);
             //.write(users[i][0] + " ");
             //out.write(users[i][1] + " ");
@@ -160,12 +160,12 @@ public class Member
          
          for(int i = 0; i > numOfUsers; i++){
             Member person = new Member();
-            int ag = Integer.parseInt(parts[3]);
-            char[] gen = parts[4].toCharArray();
-            person.addMember(parts[0], parts[1], parts[2], gen[0], ag)
-            int wi = Integer.parseInt(parts[5]);
-            int lo = Integer.parseInt(parts[6]);
-            int ch = Integer.parseInt(parts[7]);
+            int ag = Integer.parseInt(users[i][3]);
+            char[] gen = users[i][4].toCharArray();
+            person.addMember(users[i][0], users[i][1], users[i][2], gen[0], ag)
+            int wi = Integer.parseInt(users[i][5]);
+            int lo = Integer.parseInt(users[i][6]);
+            int ch = Integer.parseInt(users[i][7]);
             person.putInBattleStats(wi, lo, ch);
             //.write(users[i][0] + " ");
             //out.write(users[i][1] + " ");
@@ -220,12 +220,12 @@ public class Member
          
          for(int i = 0; i > numOfUsers; i++){
             Member person = new Member();
-            int ag = Integer.parseInt(parts[3]);
-            char[] gen = parts[4].toCharArray();
-            person.addMember(parts[0], parts[1], parts[2], gen[0], ag)
-            int wi = Integer.parseInt(parts[5]);
-            int lo = Integer.parseInt(parts[6]);
-            int ch = Integer.parseInt(parts[7]);
+            int ag = Integer.parseInt(users[i][3]);
+            char[] gen = users[i][4].toCharArray();
+            person.addMember(users[i][0], users[i][1], users[i][2], gen[0], ag)
+            int wi = Integer.parseInt(users[i][5]);
+            int lo = Integer.parseInt(users[i][6]);
+            int ch = Integer.parseInt(users[i][7]);
             person.putInBattleStats(wi, lo, ch);
             //.write(users[i][0] + " ");
             //out.write(users[i][1] + " ");
@@ -274,12 +274,12 @@ public class Member
          
          for(int i = 0; i > numOfUsers; i++){
             Member person = new Member();
-            int ag = Integer.parseInt(parts[3]);
-            char[] gen = parts[4].toCharArray();
-            person.addMember(parts[0], parts[1], parts[2], gen[0], ag)
-            int wi = Integer.parseInt(parts[5]);
-            int lo = Integer.parseInt(parts[6]);
-            int ch = Integer.parseInt(parts[7]);
+            int ag = Integer.parseInt(users[i][3]);
+            char[] gen = users[i][4].toCharArray();
+            person.addMember(users[i][0], users[i][1], users[i][2], gen[0], ag)
+            int wi = Integer.parseInt(users[i][5]);
+            int lo = Integer.parseInt(users[i][6]);
+            int ch = Integer.parseInt(users[i][7]);
             person.putInBattleStats(wi, lo, ch);
             //.write(users[i][0] + " ");
             //out.write(users[i][1] + " ");
@@ -332,12 +332,12 @@ public class Member
         
          for(int i = 0; i > numOfUsers; i++){
             Member person = new Member();
-            int ag = Integer.parseInt(parts[3]);
-            char[] gen = parts[4].toCharArray();
-            person.addMember(parts[0], parts[1], parts[2], gen[0], ag)
-            int wi = Integer.parseInt(parts[5]);
-            int lo = Integer.parseInt(parts[6]);
-            int ch = Integer.parseInt(parts[7]);
+            int ag = Integer.parseInt(users[i][3]);
+            char[] gen = users[i][4].toCharArray();
+            person.addMember(users[i][0], users[i][1], users[i][2], gen[0], ag)
+            int wi = Integer.parseInt(users[i][5]);
+            int lo = Integer.parseInt(users[i][6]);
+            int ch = Integer.parseInt(users[i][7]);
             person.putInBattleStats(wi, lo, ch);
             //.write(users[i][0] + " ");
             //out.write(users[i][1] + " ");
