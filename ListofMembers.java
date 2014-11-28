@@ -4,6 +4,29 @@ public class ListofMembers
 {  
    public FileWriter out;
    public BufferedReader br;
+   public String[][] users;
+   public String[] parts;
+   
+   ListofMembers() throws IOException, FileNotFoundException
+   {
+      users = new String[getSize()][8];
+      size = getSize();
+      count = 0;
+      BufferedReader reader = new BufferedReader(new FileReader("output.txt"));
+      String line = reader.readLine();
+      
+      while(line != null)
+      {
+         for(int i = 0; i < 8; i++)
+         {
+            parts = line.split(" ");
+            users[count][i] = parts[i]; //username
+         }
+         line = reader.readLine();
+         count++;
+      }
+   }
+   
    public void add(Member object) throws IOException
    {
       out = new FileWriter("output.txt",true);
@@ -175,6 +198,69 @@ public class ListofMembers
       return size;
 
    }
+   
+   public void addWin(String name, int val) throws IOException
+   {
+      int temp, chall, win;
+      
+      temp = searchUserLine(name) - 1;
+      win = Integer.parseInt(users[temp][5]) + val;
+      chall = Integer.parseInt(users[temp][7]) + val;
+      
+      users[temp][5] = "" + win;
+      users[temp][7] = "" + chall;
+   }
+   
+   public void addLoss(String name, int val) throws IOException
+   {
+      int temp, chall, loss;
+      
+      temp = searchUserLine(name) - 1;
+      loss = Integer.parseInt(users[temp][6]) + val;
+      chall = Integer.parseInt(users[temp][7]) + val;
+      
+      users[temp][6] = "" + loss;
+      users[temp][7] = "" + chall;
+   }
+   
+   public void update() throws FileNotFoundException, IOException
+   {
+      String temp = "";
+      size = getSize();
+      String[] hold = new String[size];
+      int count = 0, size2 = size - 1, next;
+
+      FileWriter out = new FileWriter("output.txt");
+      for(int i = 0; i < size; i++)
+      {
+         for(int j = 0; j < 8; j++)
+         {
+            temp = temp + users[i][j] + " ";
+         }
+         hold[i] = temp;
+         temp = "";
+      }
+      try { 
+         out.write(hold[0] + '\n');
+      }finally {
+         if (out != null)
+         {
+            out.close();
+         }
+      }
+      FileWriter out2 = new FileWriter("output.txt",true);
+      
+      try
+      {
+         for(int i = 1; i < size; i++)
+         {
+            out2.write(hold[i]+'\n');
+         }
+      }finally
+      {
+         out2.close();
+      }
+	}
    
    private int count = 0, size = 0;
 }

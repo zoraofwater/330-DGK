@@ -24,22 +24,9 @@ public class Subscribe
          line = reader.readLine();
          count++;
       }
-      printGraph();
    }
    
-   void printGraph()
-   {
-      System.out.println();
-      for(int i = 0; i < size; i++)
-      {
-         for(int j = 0; j < size; j++)
-         {
-            System.out.print(list[i][j]);
-         }
-         System.out.println();
-      }
-   }
-	public void update(boolean register) throws FileNotFoundException, IOException
+ 	public void update(boolean register) throws FileNotFoundException, IOException
    {
       String temp = "";
       size = lom.getSize();

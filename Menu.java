@@ -12,7 +12,7 @@ public class Menu
    int age, username;
    boolean program = true, pubPri, register, search;
    Member user = new Member();
-   ListofMembers lom = new ListofMembers();
+   ListofMembers lom;
    ListOfHoots loh = new ListOfHoots();
    Hoot hot;
    Subscribe sub;
@@ -20,6 +20,7 @@ public class Menu
    public void seeMenu(boolean login2, String memName) throws IOException
    {
       register = false;
+      lom = new ListofMembers();
       sub = new Subscribe();
       name = memName;
       System.out.println("Please select your option from the following menu: ");
@@ -140,10 +141,15 @@ public class Menu
             case 'W':
                System.out.print("How many wins would you like to add? ");
                int win = inInt.nextInt();
-               user.addWin(win, name);
+               lom.addWin(name,win);
+               lom.update();
                break;
             case 'o':
             case 'O':
+               System.out.print("How many losses would you like to add? ");
+               int loss = inInt.nextInt();
+               lom.addLoss(name,loss);
+               lom.update();
                break;
             default: 
                System.out.println("You've pressed a key not on our list. Please try again.");  
