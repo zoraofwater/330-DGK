@@ -33,8 +33,6 @@ public class Subscribe
       String[] hold = new String[size];
       int count = 0, size2 = size - 1, next;
 
-      System.out.println("number of users: " + size + " array size: " + size2);
-
       FileWriter out = new FileWriter("subscribe.txt");
       
       for(int i = 0; i < size; i++)
@@ -90,8 +88,6 @@ public class Subscribe
    public void add(String member, String user) throws IOException
    {
       int count = 0, num = lom.searchUserLine(member) - 1, num2 = lom.searchUserLine(user)-1;
-      
-      System.out.println(num + " " + num2);
       
       list[num2][num] = '1';
    }

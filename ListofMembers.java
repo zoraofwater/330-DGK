@@ -117,7 +117,7 @@ public class ListofMembers
             System.out.println("Gender: " + parts[4]);
             System.out.println("Battles won: " + parts[5]);
             System.out.println("Battles lost: " + parts[6]);
-            System.out.println("Current pending challenges: " + parts[7]);
+            System.out.println("Current total challenges: " + parts[7]);
             System.out.println("Email: " + parts[2]);
             line = null;
             user = true;

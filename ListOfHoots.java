@@ -83,8 +83,8 @@ public class ListOfHoots
 				}
 				//parts[endUserTag+1] will always be "["
 				int endHashtag = 1000;
-				for(int i = endUserTags+2; i < endHashtag; i++){
-					if(parts[i].compareTo(")") == 0){
+				for(int i = endUserTags+2; i < endHashtag; i++){//
+					if(parts[i].compareTo("]") == 0){
 						endHashtag = i;
 					}
 					else{
@@ -97,8 +97,8 @@ public class ListOfHoots
 			if(showHoot == true){
 				hTagUsers[hootNum] = uName;
 				hTagHoots[hootNum] = hootText;
-				hootNum++;
-			}
+				hootNum++;}
+		   line = reader.readLine();
 		}
 		
 		if(hTagHoots==null){

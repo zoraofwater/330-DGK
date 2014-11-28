@@ -29,7 +29,6 @@ public class Menu
          System.out.println("P: Post a Hoot");
          System.out.println("S: Subscribe to a member");
          System.out.println("F: View Subscription Hoot Feed");
-         System.out.println("U: Update records");
          System.out.println("C: Check for hoots tagged");
          System.out.println("W: Add win to record");
          System.out.println("O: Add loss to record");
@@ -82,6 +81,7 @@ public class Menu
             case 'h':
                System.out.println("What hashtag are you looking for?");
                hTag = inLine.next();
+               loh.findInstanceOfHashtag(hTag);
                break;
             case 'L':
             case 'l':
@@ -104,6 +104,8 @@ public class Menu
             case 'p':
             case 'P':
                System.out.println("What's on your mind?");
+               if (hoot == ""){
+                  hoot = inLine.nextLine();}
                hoot = inLine.nextLine();
                System.out.println("Would you like to make this hoot public? y/n?");
                val = inChar.next().charAt(0);
