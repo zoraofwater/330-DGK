@@ -27,7 +27,7 @@ public class ListofMembers
       }
    }
    
-   public void add(Member object) throws IOException
+   public void add(Member object) throws IOException //adds member to file
    {
       out = new FileWriter("output.txt",true);
       
@@ -48,7 +48,7 @@ public class ListofMembers
       }
    }
    
-   public boolean userExists(String name) throws IOException{
+   public boolean userExists(String name) throws IOException{ //checks if member exists
       br = new BufferedReader(new FileReader("output.txt"));
       String line = br.readLine();
       while(line != null){
@@ -61,8 +61,8 @@ public class ListofMembers
       return false;
    }
    
-   public boolean searchLogin(String name, String pass) throws IOException
-   {
+   public boolean searchLogin(String name, String pass) throws IOException //checks if user can log in
+   {                                                                       //with info inputted
       br = new BufferedReader(new FileReader("output.txt"));
       boolean user = true;
       String line = br.readLine(), line2 = "";;
@@ -98,7 +98,7 @@ public class ListofMembers
       return user;
    }
    
-   public void searchUser(String name) throws IOException
+   public void searchUser(String name) throws IOException //outputs info on member searched for
    {
       br = new BufferedReader(new FileReader("output.txt"));
       boolean user = false;
@@ -132,7 +132,7 @@ public class ListofMembers
       }
    }
    
-   public int searchUserLine(String name) throws IOException
+   public int searchUserLine(String name) throws IOException //returns line in file where member is
    {
       int num = 1;
       count = 0;
@@ -197,7 +197,7 @@ public class ListofMembers
 
    }
    
-   public void addWin(String name, int val) throws IOException
+   public void addWin(String name, int val) throws IOException //adds win to member's profile
    {
       int temp, chall, win;
       
@@ -209,7 +209,7 @@ public class ListofMembers
       users[temp][7] = "" + chall;
    }
    
-   public void addLoss(String name, int val) throws IOException
+   public void addLoss(String name, int val) throws IOException //adds loss to member's profile
    {
       int temp, chall, loss;
       

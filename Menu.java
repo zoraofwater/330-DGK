@@ -25,7 +25,7 @@ public class Menu
       name = memName;
       hoot = "";
       System.out.println("Please select your option from the following menu: ");
-      if(login2 == true)
+      if(login2 == true)//main menu for logged in users
       {
          System.out.println("P: Post a Hoot");
          System.out.println("S: Subscribe to a member");
@@ -34,13 +34,13 @@ public class Menu
          System.out.println("W: Add win to record");
          System.out.println("O: Add loss to record");
       }
-      else if (login2 == false)
+      else if (login2 == false)//main menu for users not logged in
       {
          System.out.println("R: Register an account");
          System.out.println("L: Log in");
       }      
          
-      System.out.println("V: View HootFeed");
+      System.out.println("V: View HootFeed");//menu for all users
       System.out.println("M: Search Member");
       System.out.println("H: Search Hashtag");
       System.out.println("Q: Quit");
@@ -52,7 +52,7 @@ public class Menu
    
       switch(ch)
          {
-            case 'r':
+            case 'r': //register user
             case 'R':
                boolean validName = false;
                while(validName==false){
@@ -83,31 +83,31 @@ public class Menu
                lom.add(user);
                sub.update(register);
                break;
-            case 'H':
+            case 'H': //search for hashtag
             case 'h':
                System.out.println("What hashtag are you looking for?");
                hTag = inLine.next();
                loh.findInstanceOfHashtag(hTag);
                break;
-            case 'L':
+            case 'L': //switch logged in members
             case 'l':
                break;
-            case 'V':
+            case 'V': //view public hoot feed
             case 'v':
                nonHoot = new NonmemberHootFeed();
                nonHoot.viewNonmemberHootFeed(login2,name);
                break;
-            case 'M':
+            case 'M': //look up info on member
             case 'm':
                System.out.print("Enter username to search: ");
                name = inLine.next();
                lom.searchUser(name);
                break;
-            case 'Q':
+            case 'Q': //quit program
             case 'q':
                program = false;   
                break;
-            case 'p':
+            case 'p': //write hoot
             case 'P':
                System.out.println("What's on your mind?");
                hoot = inLine.nextLine();
@@ -132,7 +132,7 @@ public class Menu
                hot = new Hoot(name,pubPri,hoot);
                loh.insert(hot);
                break;
-            case 's':
+            case 's': //subscribe to a member
             case 'S':
                System.out.print("Enter username to search: ");
                String name2 = inLine.next();
@@ -141,26 +141,24 @@ public class Menu
                sub.add(name2,name);
                sub.update(register);
                break;
-            case 'f':
+            case 'f': //subscribe hoot feed
             case 'F':
-               //subscribe hoot feed
                MemberHootFeed memHootFeed = new MemberHootFeed();
                memHootFeed.viewMemberHootFeed(name);
                break;
-            case 'c':
+            case 'c': //check tags
             case 'C':
-               //check tags
                nonHoot = new NonmemberHootFeed();
                nonHoot.amITagged(name);
                break;
-            case 'w':
+            case 'w': //add wins to record
             case 'W':
                System.out.print("How many wins would you like to add? ");
                int win = inInt.nextInt();
                lom.addWin(name,win);
                lom.update();
                break;
-            case 'o':
+            case 'o': //add losses to record
             case 'O':
                System.out.print("How many losses would you like to add? ");
                int loss = inInt.nextInt();

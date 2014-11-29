@@ -27,13 +27,13 @@ public class Hoot{
          check = hot.charAt(count);
          if (check == '#'){
             try{HL.ListAdd(hot, count);}
-            catch(IOException a){System.out.print("Shove something in there <3 Juliana");}
+            catch(IOException a){System.out.print("HAdd exception");}
          }
       }
    }
     
    public void TAdd(String hot){   
-      TagList TL = new TagList(); //should be in main
+      TagList TL = new TagList();
       int count = 0;
       char check = hot.charAt(count);
       while (check != hot.charAt(-1)){
@@ -41,7 +41,7 @@ public class Hoot{
          check = hot.charAt(count);
          if (check == '@'){
             try{TL.ListAdd(hot, count);}
-            catch(IOException a){System.out.print("Shove something in there <3 Juliana");}
+            catch(IOException a){System.out.print("TAdd exception");}
 
          }   
       }

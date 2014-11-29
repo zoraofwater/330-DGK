@@ -19,7 +19,7 @@ public class HootHoot
          {
             System.out.println("Welcome, " + name);
          }
-         menu.seeMenu(login, name);
+         menu.seeMenu(login, name);//begin menu
          ch = inChar.next().charAt(0);
          System.out.println("");
          program = menu.menuChoice(ch, login);

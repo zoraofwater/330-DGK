@@ -49,6 +49,7 @@ public class ListOfHoots
 	}
 	
 	public void findInstanceOfHashtag(String htag)throws FileNotFoundException, IOException{
+      //find all hashtags that match user input
 		BufferedReader reader = new BufferedReader(new FileReader("hootFile.txt"));
 		String line = reader.readLine();
 		String[] hTagHoots = new String[1000];
@@ -104,7 +105,7 @@ public class ListOfHoots
 		}
 		
 		if(exist == false){
-			System.out.println("Sorry, no Hoots match your search.  I guess that makes you sooo unique.");
+			System.out.println("Sorry, no Hoots match your search.");
 		}
 		else{
 			int pages = hootNum / 5;

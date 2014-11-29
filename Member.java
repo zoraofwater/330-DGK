@@ -11,7 +11,7 @@ public class Member
    Member()
    {}
 
-   public void addMember(String name, String pass, String mail, char gen, int ag)
+   public void addMember(String name, String pass, String mail, char gen, int ag) //constructor
    {
       gender = gen;
       username = name;

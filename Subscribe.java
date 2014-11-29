@@ -27,7 +27,7 @@ public class Subscribe
    }
    
  	public void update(boolean register) throws FileNotFoundException, IOException
-   {
+   { //updates file for new subscription
       String temp = "";
       size = lom.getSize();
       String[] hold = new String[size];
@@ -85,14 +85,14 @@ public class Subscribe
       }
 	}
    
-   public void add(String member, String user) throws IOException
+   public void add(String member, String user) throws IOException //adds new member (new row and column)
    {
       int count = 0, num = lom.searchUserLine(member) - 1, num2 = lom.searchUserLine(user)-1;
       
       list[num2][num] = '1';
    }
    
-   public boolean searchSub(String member, String user) throws IOException
+   public boolean searchSub(String member, String user) throws IOException //checks if user is subscribed to member
    {
       int count = 0, num = lom.searchUserLine(member) - 1, num2 = lom.searchUserLine(user)-1;
       boolean subby;

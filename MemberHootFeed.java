@@ -41,7 +41,7 @@ public class MemberHootFeed
 			line = hootReader.readLine();
 		}
 		if(numOfHoots==0){
-			System.out.println("I am so sorry, it looks like nobody likes you.  So sad.");
+			System.out.println("I am so sorry, there are no hoots.");
 		}
 		else {
 			int pages = numOfHoots / 5;

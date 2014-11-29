@@ -121,7 +121,7 @@ public class NonmemberHootFeed
 		}
 	}
 	
-	public void amITagged(String taggedName) throws IOException{
+	public void amITagged(String taggedName) throws IOException{ //checks if user is tagged
 		int tagCount = 0;
 		BufferedReader reader = new BufferedReader(new FileReader("hootFile.txt"));
 		String[] tagHoots = new String[1000];
@@ -181,7 +181,7 @@ public class NonmemberHootFeed
 		line = reader.readLine();	
 		}
 		if(tagCount==0){
-			System.out.println("I am so sorry, it looks like nobody likes you.  So sad.");
+			System.out.println("It looks like you have not been tagged.");
 		}
 		else {
 			int pages = tagCount / 5;
