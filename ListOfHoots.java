@@ -57,12 +57,14 @@ public class ListOfHoots
 		String[] hTagHoots = new String[1000];
 		String[] hTagUsers = new String[1000];
 		int hootNum = 0;
+      boolean exist = false;
 		while (line != null){
 			String parts[] = line.split(" ");
 			String hootText = "";
 			String uName = "";
-			
+         
 			uName = parts[1];
+       
 			boolean showHoot = false;
 			if (parts[2].compareTo("0") == 0){
 				int endHoot = 1000;
@@ -83,7 +85,7 @@ public class ListOfHoots
 				}
 				//parts[endUserTag+1] will always be "["
 				int endHashtag = 1000;
-				for(int i = endUserTags+2; i < endHashtag; i++){//
+				for(int i = endUserTags+2; i < endHashtag; i++){
 					if(parts[i].compareTo("]") == 0){
 						endHashtag = i;
 					}
@@ -94,14 +96,17 @@ public class ListOfHoots
 					}
 				}
 			}
-			if(showHoot == true){
+			if(showHoot == true)
+         {
 				hTagUsers[hootNum] = uName;
 				hTagHoots[hootNum] = hootText;
-				hootNum++;}
+				hootNum++;
+            exist = true;
+         }
 		   line = reader.readLine();
 		}
 		
-		if(hTagHoots==null){
+		if(exist == false){
 			System.out.println("Sorry, no Hoots match your search.  I guess that makes you sooo unique.");
 		}
 		else{

@@ -171,8 +171,6 @@ public class NonmemberHootFeed
 			}
 			
 			for(int j = 0; j < tUserIterator; j++){
-         System.out.println(taggedName);
-         System.out.println(tUsers[j]);
 				if(taggedName.compareTo(tUsers[j]) == 0){
 					tagHoots[tagCount] = hootText;
 					tagUsers[tagCount] = uName;

@@ -1,14 +1,14 @@
-{ J03y 0 STARTTHEHOOT My Rattata evolved! Now my Raticate is in the top percentage of Raticates! #Top10 ENDTHEHOOT [#Top10]}
-{ J03y 1 STARTTHEHOOT Not Much ENDTHEHOOT ( ) [ ]}
-{ J03y 0 STARTTHEHOOT Not Much ENDTHEHOOT ( ) [ ]}
-{ J03y 0 STARTTHEHOOT fuuuuuuuuck this shite ENDTHEHOOT ( J03y ) [ ] }
+{ J03y 0 STARTTHEHOOT My Rattata evolved! Now my Raticate is in the top percentage of Raticates! #Top10 ENDTHEHOOT ( ) [ Top10 ] }
+{ J03y 1 STARTTHEHOOT Not Much ENDTHEHOOT ( ) [ ] }
+{ J03y 0 STARTTHEHOOT Not Much ENDTHEHOOT ( ) [ ] }
+{ J03y 0 STARTTHEHOOT fuuuuuuuuck this shite #derp ENDTHEHOOT ( ) [ derp ] }
 { J03y 0 STARTTHEHOOT I'm a sexy widdle baby ENDTHEHOOT ( ) [ ] }
 { J03y 0 STARTTHEHOOT fuck ENDTHEHOOT ( ) [ ] }
-{ J03y 0 STARTTHEHOOT I can't wait til I'm 21 ENDTHEHOOT ( ) [ ] }
+{ J03y 0 STARTTHEHOOT I can't wait til I'm 21 #derp ENDTHEHOOT ( ) [ derp ] }
 { J03y 0 STARTTHEHOOT Hashtag #hashtag ENDTHEHOOT ( ) [ hashtag ] }
 { J03y 0 STARTTHEHOOT Yo! ENDTHEHOOT ( ) [ ] }
 { J03y 1 STARTTHEHOOT Fargle ENDTHEHOOT ( ) [ ] }
-{ danny 1 STARTTHEHOOT danny private hoot ENDTHEHOOT ( ) [ ] }
+{ danny 1 STARTTHEHOOT danny private hoot ENDTHEHOOT ( J03y ) [ ] }
 { derpa 1 STARTTHEHOOT derpa private hoot ENDTHEHOOT ( ) [ ] }
 { derp 1 STARTTHEHOOT derp private hoot ENDTHEHOOT ( ) [ ] }
 { akldsfm 1 STARTTHEHOOT akldsfm private hoot ENDTHEHOOT ( ) [ ] }
@@ -16,3 +16,8 @@
 { aldsjf 1 STARTTHEHOOT aldsjf private hoot ENDTHEHOOT ( ) [ ] }
 { bob 1 STARTTHEHOOT bob private hoot ENDTHEHOOT ( ) [ ] }
 { danny 1 STARTTHEHOOT danny private hoot2 ENDTHEHOOT ( ) [ ] }
+{ J03y 0 STARTTHEHOOT derpaderp ENDTHEHOOT ( ) [ ] }
+{ J03y 0 STARTTHEHOOT derpadklfjaldsf ENDTHEHOOT ( ) [ ] }
+{ J03y 0 STARTTHEHOOT delkrajldjfljdslfjladksjf #fuuuu ENDTHEHOOT ( ) [ ] }
+{ J03y 1 STARTTHEHOOT  ENDTHEHOOT ( { J03y 0 STARTTHEHOOT dlaksjfl ENDTHEHOOT ( ) [ ] }
+{ J03y 0 STARTTHEHOOT #derp #ffuuuuu #apples ENDTHEHOOT ( ) [ derp ffuuuuu apples ] }

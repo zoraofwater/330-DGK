@@ -61,7 +61,7 @@ public class Menu
                      validName=true;
                   }
                   else {
-                     System.out.println("I am so sorry, but someone has already taken that username.");
+                     System.out.print("I am so sorry, but someone has already taken that username: ");
                   }
                }
                System.out.print("Enter password: ");
@@ -72,6 +72,11 @@ public class Menu
                gender = inChar.nextLine().charAt(0);
                System.out.print("Enter age (Must be 10+ to make an account): ");
                age = inInt.nextInt();
+               while(age < 10)
+               {
+                  System.out.print("The age is too low for registration. Please type enter a valid age: ");
+                  age = inInt.nextInt();
+               }
                register = true;
                user.addMember(name,pass,email,gender,age);
                lom.add(user);
