@@ -109,9 +109,9 @@ public class Menu
             case 'p':
             case 'P':
                System.out.println("What's on your mind?");
+               hoot = inLine.nextLine();
                if (hoot == ""){
                   hoot = inLine.nextLine();}
-               hoot = inLine.nextLine();
                System.out.println("Would you like to make this hoot public? y/n?");
                val = inChar.next().charAt(0);
                if(val =='y' || val == 'Y')
@@ -129,6 +129,8 @@ public class Menu
             case 'S':
                System.out.print("Enter username to search: ");
                String name2 = inLine.next();
+               if (name2 == ""){
+                  name2 = inLine.nextLine();}               
                sub.add(name2,name);
                sub.update(register);
                break;
