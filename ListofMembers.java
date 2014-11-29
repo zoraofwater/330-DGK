@@ -54,13 +54,11 @@ public class ListofMembers
       while(line != null){
          String parts[] = line.split(" ");
          if(name.equals(parts[0])) {
-         System.out.println("inthere");
             return true;
          }
          line = br.readLine();
       }
       return false;
-      
    }
    
    public boolean searchLogin(String name, String pass) throws IOException
@@ -109,7 +107,6 @@ public class ListofMembers
       while(line != null)
       {  
          String[] parts = line.split(" ");
-         System.out.println(parts[0]);
          if(name.equals(parts[0]))
          {
             System.out.println("Username: " + parts[0]);
@@ -119,6 +116,7 @@ public class ListofMembers
             System.out.println("Battles lost: " + parts[6]);
             System.out.println("Current total challenges: " + parts[7]);
             System.out.println("Email: " + parts[2]);
+            System.out.println();
             line = null;
             user = true;
          }
@@ -127,7 +125,8 @@ public class ListofMembers
             line = br.readLine();  
          }
       }
-      if(user == false);
+      
+      if(user == false)
       {
          System.out.println("Username not found.");
       }
@@ -180,7 +179,6 @@ public class ListofMembers
          temp2 = temp2 + ch;
          count++;
       }
-      
       return temp2;
    }
    
@@ -261,6 +259,5 @@ public class ListofMembers
          out2.close();
       }
 	}
-   
    private int count = 0, size = 0;
 }

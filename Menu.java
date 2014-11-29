@@ -23,6 +23,7 @@ public class Menu
       lom = new ListofMembers();
       sub = new Subscribe();
       name = memName;
+      hoot = "";
       System.out.println("Please select your option from the following menu: ");
       if(login2 == true)
       {
@@ -46,7 +47,7 @@ public class Menu
       System.out.println("");
    }
    
-   public boolean menuChoice(char ch) throws IOException, FileNotFoundException
+   public boolean menuChoice(char ch, boolean login2) throws IOException, FileNotFoundException
    {
    
       switch(ch)
@@ -94,7 +95,7 @@ public class Menu
             case 'V':
             case 'v':
                nonHoot = new NonmemberHootFeed();
-               nonHoot.viewNonmemberHootFeed();
+               nonHoot.viewNonmemberHootFeed(login2,name);
                break;
             case 'M':
             case 'm':
@@ -110,8 +111,14 @@ public class Menu
             case 'P':
                System.out.println("What's on your mind?");
                hoot = inLine.nextLine();
-               if (hoot == ""){
-                  hoot = inLine.nextLine();}
+               while (hoot == ""){
+                  hoot = inLine.nextLine();
+               }
+               while(hoot.length() > 140)
+               {
+                     System.out.println("Your hoot exceeds the 140 character limit. Please try again: ");
+                     hoot = inLine.nextLine();
+               }
                System.out.println("Would you like to make this hoot public? y/n?");
                val = inChar.next().charAt(0);
                if(val =='y' || val == 'Y')

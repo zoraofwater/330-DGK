@@ -8,9 +8,6 @@ import java.io.BufferedWriter;
 
 public class Member
 {
-   public String[] users;
-   public String[] parts;
-   
    Member()
    {}
 

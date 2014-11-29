@@ -4,10 +4,11 @@ import java.io.BufferedReader.*;
 
 public class NonmemberHootFeed
 {
-	public NonmemberHootFeed()throws FileNotFoundException, IOException{
-	}
+	public NonmemberHootFeed()throws FileNotFoundException, IOException{}
 	
-	public void viewNonmemberHootFeed()throws FileNotFoundException, IOException{
+   Subscribe sub = new Subscribe();
+   
+	public void viewNonmemberHootFeed(boolean login, String name)throws FileNotFoundException, IOException{
 		BufferedReader reader = new BufferedReader(new FileReader("hootFile.txt"));
 
 		boolean priOrPub;
@@ -20,36 +21,32 @@ public class NonmemberHootFeed
 		int numOfHoots = 0;
 		while (line != null) {
 			String parts[] = line.split(" ");
-			
 			String hootText = "";
 			uName = "";
 			
-			
-			int i = 0;
-			int startHoot = 3;
-			int endHoot = 1000;
-			int endtUsers = 1000;
-			int endhTags = 1000;
-			int tUserIterator = 0;
-			int hTagIterator = 0;
+			int i = 0, startHoot = 3, endHoot = 1000,endtUsers = 1000,endhTags = 1000, tUserIterator = 0,hTagIterator = 0;
 // parts[0] will always be "{"
 // parts[1] will always be the username
 // parts[2] will always either be "0" which is public or "1" which is private
 // parts[3] will always be an open quote
 // parts[4] will always be the first word in the hoot
 			uName = parts[1];
-			if (parts[2].compareTo("0") == 0) {
-				priOrPub = false;
+			if (parts[2].compareTo("0") == 0){
+				priOrPub = true;
 			}
 			else {
-				priOrPub = true;
+            if(login == true)
+            {
+               priOrPub = sub.searchSub(parts[1],name);
+            }
+            else
+            {
+   				priOrPub = false;
+            }
 			}
 			
 			for (String part : parts) {
-				if(i >= 0 && i <= 3){
-					
-				}
-				else if(i >= 4 && i <= endHoot){
+				if(i >= 4 && i <= endHoot){
 					if (parts[i].compareTo("ENDTHEHOOT") == 0){
 						endHoot = i;
 					}
@@ -80,7 +77,7 @@ public class NonmemberHootFeed
 				i++;
 			}
 			
-			if (priOrPub == false){
+			if (priOrPub == true){
 				
 				users[numOfHoots] = uName;
 				hoots[numOfHoots] = hootText;
@@ -223,7 +220,5 @@ public class NonmemberHootFeed
 				}
 			}
 		}
-		
-	
 	}
 }

@@ -4,10 +4,7 @@ import java.io.BufferedReader.*;
 
 public class MemberHootFeed
 {
-	
-	
-	public MemberHootFeed()throws FileNotFoundException, IOException{
-	}
+	public MemberHootFeed()throws FileNotFoundException, IOException{}
    
    Subscribe sub = new Subscribe();
 	
@@ -27,7 +24,8 @@ public class MemberHootFeed
 			
 			uName = parts[1];
 			
-			if(sub.searchSub(uName, user) == true){
+			if(sub.searchSub(uName, user) == true)
+         {
 				for(int i = 4; i < endHoot; i++){
 					if (parts[i].compareTo("ENDTHEHOOT") == 0){
 						endHoot = i;
@@ -40,7 +38,6 @@ public class MemberHootFeed
 				hoots[numOfHoots] = hootText;
 				numOfHoots++;
 			}
-			
 			line = hootReader.readLine();
 		}
 		if(numOfHoots==0){
@@ -72,9 +69,6 @@ public class MemberHootFeed
 					keepGoing = false;
 					break;
 				}
-				else{
-					
-				}
 			}
 			if(keepGoing == true){
 				for(int i = lastPageSize; lastPageSize > 0; lastPageSize--){
@@ -83,7 +77,5 @@ public class MemberHootFeed
 				}
 			}
 		}
-		
-	
 	}
 }

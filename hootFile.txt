@@ -18,5 +18,6 @@
 { danny 1 STARTTHEHOOT danny private hoot2 ENDTHEHOOT ( ) [ ] }
 { J03y 0 STARTTHEHOOT derpaderp ENDTHEHOOT ( ) [ ] }
 { J03y 0 STARTTHEHOOT derpadklfjaldsf ENDTHEHOOT ( ) [ ] }
-{ J03y 1 STARTTHEHOOT  ENDTHEHOOT ( { J03y 0 STARTTHEHOOT dlaksjfl ENDTHEHOOT ( ) [ ] }
 { J03y 0 STARTTHEHOOT #derp #aderp #apples ENDTHEHOOT ( ) [ derp aderp apples ] }
+{ Zelda 0 STARTTHEHOOT HYRULE!!!! #GoawayGanondorf ENDTHEHOOT ( ) [ GoawayGanondorf ] }
+{ Zelda 1 STARTTHEHOOT I want a new hero @J03y #Whyyyyy ENDTHEHOOT ( J03y ) [ Whyyyyy ] }

@@ -10,7 +10,7 @@ public class HootHoot
       char ch;
       boolean program = true, login = false;
       ListofMembers lom = new ListofMembers();
-      String name = null, pass;
+      String name = "", pass;
       Menu menu = new Menu();
       
       while(program == true)
@@ -22,7 +22,7 @@ public class HootHoot
          menu.seeMenu(login, name);
          ch = inChar.next().charAt(0);
          System.out.println("");
-         program = menu.menuChoice(ch);
+         program = menu.menuChoice(ch, login);
          if(ch == 'l' || ch == 'L')
          {  
             System.out.print("Enter username: ");
@@ -40,7 +40,5 @@ public class HootHoot
             }
          }
       }
-
-      
    }
 }

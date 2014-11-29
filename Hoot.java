@@ -19,7 +19,7 @@ public class Hoot{
       return pubPri;}
 
    public void HAdd(String hot){
-      HashList HL = new HashList(); //should be in main
+      HashList HL = new HashList();
       int count = 0;
       char check = hot.charAt(count);
       while (check != hot.charAt(-1)){

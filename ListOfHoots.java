@@ -9,10 +9,8 @@ import java.util.Scanner;
 public class ListOfHoots
 {
 	protected boolean HootStatus;
-	public ListOfHoots(){
-		
-	}
-//Adds hoot to end of list and file
+	public ListOfHoots(){}
+
 	public void insert(Hoot thing) throws IOException{
 		FileWriter out = new FileWriter("hootFile.txt",true);
 		try { 
@@ -23,7 +21,7 @@ public class ListOfHoots
 			else {
 				out.write("0");
 			}
-			out.write(" STARTTHEHOOT " + thing.hot + " ENDTHEHOOT ( ");
+			out.write(" STARTTHEHOOT " + thing.getHoot() + " ENDTHEHOOT ( ");
 			//Make an array of strings from the hoot of individual words in hoot
 			String parts[] = thing.getHoot().split(" ");
 			//int partsSize = parts.size();
@@ -33,7 +31,6 @@ public class ListOfHoots
 				if(word[0] == '@'){
 					out.write(str.substring(1) + " ");	
 				}
-				
 			}
 			out.write(") [ ");
 			//find all tagged users
@@ -135,20 +132,13 @@ public class ListOfHoots
 					keepGoing = false;
 					break;
 				}
-				else{
-					
-				}
 			}
 			if(keepGoing == true){
 				for(int i = lastPageSize; lastPageSize > 0; lastPageSize--){
 					System.out.print(hTagUsers[lastPageSize-1] + ": ");
 					System.out.print(hTagHoots[lastPageSize-1] + "\n\n");
 				}
-			}
-			
+			}	
 		}
 	}
-	
-	
-	
 }
